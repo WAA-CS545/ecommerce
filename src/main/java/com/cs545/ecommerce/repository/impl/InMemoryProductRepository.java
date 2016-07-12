@@ -73,6 +73,42 @@ public class InMemoryProductRepository implements ProductRepository {
         images = new ArrayList<Image>();
         images.add(new Image("Men's Sweater", "P1238"));
         mensweater.setImages(images);
+        
+        Product hoodie = new Product("P1239", "Men hoodie", BigDecimal.valueOf(10));
+        hoodie.setDescription("Men's hoodie from Armani");
+        hoodie.setCategory(new Category("Clothes", "Men clothes"));
+        hoodie.setManufacturer("Geogio Armani");
+        hoodie.setUnitsInStock(15);
+        images = new ArrayList<Image>();
+        images.add(new Image("Men hoodie", "P1239"));
+        hoodie.setImages(images);
+        
+        Product ladiesdress = new Product("P1240", "Ladies dress", BigDecimal.valueOf(30));
+        ladiesdress.setDescription("Ladies' dress from Takobel");
+        ladiesdress.setCategory(new Category("Clothes", "Women clothes"));
+        ladiesdress.setManufacturer("Takobel");
+        ladiesdress.setUnitsInStock(5);
+        images = new ArrayList<Image>();
+        images.add(new Image("Ladies dress", "P1240"));
+        ladiesdress.setImages(images);
+        
+        Product mensshoe = new Product("P1241", "Men shoe", BigDecimal.valueOf(80));
+        mensshoe.setDescription("Men's show from Clarks");
+        mensshoe.setCategory(new Category("Shoes", "Men shoes"));
+        mensshoe.setManufacturer("Clarks");
+        mensshoe.setUnitsInStock(5);
+        images = new ArrayList<Image>();
+        images.add(new Image("Men shoe", "P1241"));
+        mensshoe.setImages(images);
+        
+        Product womenshoe = new Product("P1242", "Women shoe", BigDecimal.valueOf(80));
+        womenshoe.setDescription("Ladies' shoes from Clarks");
+        womenshoe.setCategory(new Category("Shoes", "Women shoes"));
+        womenshoe.setManufacturer("Clarks");
+        womenshoe.setUnitsInStock(5);
+        images = new ArrayList<Image>();
+        images.add(new Image("Women shoe", "P1241"));
+        womenshoe.setImages(images);
 
         listOfProduct.add(iPhone);
         listOfProduct.add(nexus7);
