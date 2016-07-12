@@ -16,6 +16,11 @@ public class Product {
 	public Product() {
 		super();
 	}
+	public Product(String productId, String name, BigDecimal unitPrice) {
+        this.productId = productId;
+        this.productName = name;
+        this.unitPrice = unitPrice;
+    }
 
 	public String getProductId() {
 		return productId;

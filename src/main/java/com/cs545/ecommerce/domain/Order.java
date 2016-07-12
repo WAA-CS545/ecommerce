@@ -121,8 +121,8 @@ public class Order {
         String productId = item.getProduct().getProductId();
 
         if (orderItems.containsKey(productId)) {
-            OrderItem existingCartItem = orderItems.get(productId);
-            existingCartItem.setQuantity(existingCartItem.getQuantity()
+            OrderItem existingOrderItem = orderItems.get(productId);
+            existingOrderItem.setQuantity(existingOrderItem.getQuantity()
                     + item.getQuantity());
         }else{
             orderItems.put(productId, item);
