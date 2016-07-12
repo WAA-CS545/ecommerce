@@ -21,6 +21,10 @@ public class Category implements Serializable{
 		super();
 		
 	}
+	
+	public Category(String categoryName){
+		this.categoryName = categoryName;
+	}
 
 	/**
 	 * @return the categoryName

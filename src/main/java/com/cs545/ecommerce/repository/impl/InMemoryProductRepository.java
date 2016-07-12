@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 
+import com.cs545.ecommerce.domain.Category;
+import com.cs545.ecommerce.domain.Image;
 import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.ProductRepository;
 
@@ -21,27 +23,38 @@ import com.cs545.ecommerce.repository.ProductRepository;
 public class InMemoryProductRepository implements ProductRepository {
 
     private final List<Product> listOfProduct;
+    private List<Image> images;
 
     public InMemoryProductRepository() {
         listOfProduct = new ArrayList<Product>();
 
         Product iPhone = new Product("P1234", "iPhone", BigDecimal.valueOf(499));
         iPhone.setDescription("iPhone 7");
-        iPhone.setCategory("Smart Phone");
+        iPhone.setCategory(new Category("Smart Phone"));
         iPhone.setManufacturer("Apple");
         iPhone.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("iPhone 7", "P1234"));
+        iPhone.setImages(images);
 
         Product nexus7 = new Product("P1235", "Nexus 7", BigDecimal.valueOf(350));
         nexus7.setDescription("Nexus 7 tablet");
-        nexus7.setCategory("Tablet");
+        nexus7.setCategory(new Category("Tablet"));
         nexus7.setManufacturer("Asus");
         nexus7.setUnitsInStock(500);
+        images = new ArrayList<Image>();
+        images.add(new Image("Nexus 7", "P1235"));
+        nexus7.setImages(images);
+
 
         Product dellLatitude = new Product("P1236", "Dell Latitude", BigDecimal.valueOf(700));
         dellLatitude.setDescription("Dell latitude laptop");
-        dellLatitude.setCategory("Laptop");
+        dellLatitude.setCategory(new Category("Laptop"));
         dellLatitude.setManufacturer("Dell");
         dellLatitude.setUnitsInStock(50);
+        images = new ArrayList<Image>();
+        images.add(new Image("Dell latitude", "P1236"));
+        dellLatitude.setImages(images);
 
         listOfProduct.add(iPhone);
         listOfProduct.add(nexus7);
@@ -49,12 +62,12 @@ public class InMemoryProductRepository implements ProductRepository {
 
     }
 
-    @Override
+ 
     public List<Product> getAllProducts() {
         return listOfProduct;
     }
 
-    @Override
+ 
     public Product getProductById(String productId) {
         for(Product product: listOfProduct){
             if(product.getProductId().equals(productId)) {

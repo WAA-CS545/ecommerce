@@ -10,7 +10,7 @@ public class Product {
 	private String description;
 	private List<Image> images;
 	private BigDecimal unitPrice;
-	private int quantityInStock;
+	private int unitsInStock;
 	private String manufacturer;
 	
 	public Product() {
@@ -70,12 +70,12 @@ public class Product {
 		this.unitPrice = unitPrice;
 	}
 
-	public int getQuantityInStock() {
-		return quantityInStock;
+	public int getUnitsInStock() {
+		return unitsInStock;
 	}
 
-	public void setQuantityInStock(int quantityInStock) {
-		this.quantityInStock = quantityInStock;
+	public void setUnitsInStock(int unitsInStock) {
+		this.unitsInStock = unitsInStock;
 	}
 
 	public String getManufacturer() {
@@ -115,8 +115,6 @@ public class Product {
 		} else if (!productName.equals(other.productName))
 			return false;
 		return true;
-	}
-	
-	
+	}	
 	
 }
