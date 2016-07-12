@@ -30,7 +30,7 @@ public class InMemoryProductRepository implements ProductRepository {
 
         Product iPhone = new Product("P1234", "iPhone", BigDecimal.valueOf(499));
         iPhone.setDescription("iPhone 7");
-        iPhone.setCategory(new Category("Smart Phone"));
+        iPhone.setCategory(new Category("Electronics", "Cell phones"));
         iPhone.setManufacturer("Apple");
         iPhone.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -39,7 +39,7 @@ public class InMemoryProductRepository implements ProductRepository {
 
         Product nexus7 = new Product("P1235", "Nexus 7", BigDecimal.valueOf(350));
         nexus7.setDescription("Nexus 7 tablet");
-        nexus7.setCategory(new Category("Tablet"));
+        nexus7.setCategory(new Category("Electronics", "Tablet"));
         nexus7.setManufacturer("Asus");
         nexus7.setUnitsInStock(500);
         images = new ArrayList<Image>();
@@ -49,12 +49,30 @@ public class InMemoryProductRepository implements ProductRepository {
 
         Product dellLatitude = new Product("P1236", "Dell Latitude", BigDecimal.valueOf(700));
         dellLatitude.setDescription("Dell latitude laptop");
-        dellLatitude.setCategory(new Category("Laptop"));
+        dellLatitude.setCategory(new Category("Computers", "Laptops"));
         dellLatitude.setManufacturer("Dell");
         dellLatitude.setUnitsInStock(50);
         images = new ArrayList<Image>();
         images.add(new Image("Dell latitude", "P1236"));
         dellLatitude.setImages(images);
+        
+        Product hpPavilion = new Product("P1237", "HP Pavilion", BigDecimal.valueOf(200));
+        hpPavilion.setDescription("Dual Core PC from HP");
+        hpPavilion.setCategory(new Category("Computers", "PCs"));
+        hpPavilion.setManufacturer("HP");
+        hpPavilion.setUnitsInStock(40);
+        images = new ArrayList<Image>();
+        images.add(new Image("HP Pavilion", "P1237"));
+        hpPavilion.setImages(images);
+        
+        Product mensweater = new Product("P1238", "Men's Sweater", BigDecimal.valueOf(20));
+        mensweater.setDescription("Men's sweater from Amani");
+        mensweater.setCategory(new Category("Clothes", "Men clothes"));
+        mensweater.setManufacturer("Geogio Armani");
+        mensweater.setUnitsInStock(15);
+        images = new ArrayList<Image>();
+        images.add(new Image("Men's Sweater", "P1238"));
+        mensweater.setImages(images);
 
         listOfProduct.add(iPhone);
         listOfProduct.add(nexus7);
@@ -66,7 +84,6 @@ public class InMemoryProductRepository implements ProductRepository {
     public List<Product> getAllProducts() {
         return listOfProduct;
     }
-
  
     public Product getProductById(String productId) {
         for(Product product: listOfProduct){
@@ -76,6 +93,16 @@ public class InMemoryProductRepository implements ProductRepository {
         }
         throw new IllegalArgumentException(
                 String.format("Product with id %s not found", productId));
+    }
+    
+    public List<Product> getProductByCategoryName(String categoryName){
+    	List<Product> productsInCategory = new ArrayList<Product>();
+    	for(Product product : listOfProduct){
+    		if(product.getCategory().getCategoryName().equals(categoryName)){
+    			productsInCategory.add(product);
+    		}    		
+    	}
+    	return productsInCategory; 	
     }
 
 }
