@@ -16,4 +16,5 @@ import com.cs545.ecommerce.domain.Product;
 public interface ProductRepository {
     List<Product> getAllProducts();
     Product getProductById(String productId);
+    List<Product> getProductByCategoryName(String categoryName);    
 }

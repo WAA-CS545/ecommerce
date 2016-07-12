@@ -11,6 +11,7 @@ import java.io.Serializable;
  */
 public class Category implements Serializable{
 	private String categoryName;
+	private String subCategoryOf;
 	private String description;
 	private String categoryImage;
 	
@@ -22,8 +23,9 @@ public class Category implements Serializable{
 		
 	}
 	
-	public Category(String categoryName){
+	public Category(String mainCategory, String categoryName){
 		this.categoryName = categoryName;
+		this.subCategoryOf = mainCategory;
 	}
 
 	/**
@@ -59,6 +61,22 @@ public class Category implements Serializable{
 	 */
 	public String getCategoryImage() {
 		return categoryImage;
+	}
+	
+	
+
+	/**
+	 * @return the subCategoryOf
+	 */
+	public String getSubCategoryOf() {
+		return subCategoryOf;
+	}
+
+	/**
+	 * @param subCategoryOf the subCategoryOf to set
+	 */
+	public void setSubCategoryOf(String subCategoryOf) {
+		this.subCategoryOf = subCategoryOf;
 	}
 
 	/**
@@ -98,7 +116,6 @@ public class Category implements Serializable{
 			return false;
 		return true;
 	}
-		
 	
 
 }
