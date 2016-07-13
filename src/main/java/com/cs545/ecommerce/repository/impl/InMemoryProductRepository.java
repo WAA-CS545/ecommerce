@@ -77,7 +77,7 @@ public class InMemoryProductRepository implements ProductRepository {
         clarissa.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("clarissa", "P1240.jpg"));
-        littlehome.setImages(images);
+        clarissa.setImages(images);
         
         Product essential = new Product("P1241", "Essential", BigDecimal.valueOf(499));
         essential.setDescription("Essential");
@@ -86,7 +86,7 @@ public class InMemoryProductRepository implements ProductRepository {
         essential.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("essential", "P1241.jpg"));
-        littlehome.setImages(images);
+        essential.setImages(images);
         
         Product tribecalliving = new Product("P1242", "Tribecal Living", BigDecimal.valueOf(499));
         tribecalliving.setDescription("tribecalliving");
@@ -95,7 +95,7 @@ public class InMemoryProductRepository implements ProductRepository {
         tribecalliving.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("tribecalliving", "P1242.jpg"));
-        littlehome.setImages(images);
+        tribecalliving.setImages(images);
         
 
         
