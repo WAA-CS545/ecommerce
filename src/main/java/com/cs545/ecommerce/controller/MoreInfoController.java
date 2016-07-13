@@ -4,6 +4,7 @@
 package com.cs545.ecommerce.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -14,25 +15,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MoreInfoController {
 	
-	@RequestMapping("/order")
-	public String howToOrder(){
-		return "order";
+	@RequestMapping("/howToOrder")
+	public String howToOrder(Model model){
+		
+		model.addAttribute("pageToRender", "jsp/howToOrder.jsp");
+		return "UI/template";
 	}
 	
-	public String faq() {
-		return null;
+	@RequestMapping("/faq")
+	public String faq(Model model) {
+		model.addAttribute("pageToRender", "jsp/faq.jsp");
+		return "UI/template";
 	}
 	
-	public String location() {
-		return null;
+	@RequestMapping("/location")
+	public String location(Model model) {
+		model.addAttribute("pageToRender", "jsp/location.jsp");
+		return "UI/template";
 	}
 	
-	public String shipping() {
-		return null;
+	@RequestMapping("/shipping")
+	public String shipping(Model model) {
+		model.addAttribute("pageToRender", "jsp/shipping.jsp");
+		return "UI/template";
 	}
 	
-	public String membership() {
-		return null;
+	@RequestMapping("/membership")
+	public String membership(Model model) {
+		model.addAttribute("pageToRender", "jsp/membership.jsp");
+		return "UI/template";
 	}
 	
 }
