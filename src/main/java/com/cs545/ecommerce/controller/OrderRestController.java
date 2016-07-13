@@ -25,7 +25,9 @@ import com.cs545.ecommerce.service.ProductService;
 /**
  *
  * @author Solomon Kassahun
+ * The objective of this controller class is to serve RESTful requests related to order
  */
+
 @Controller
 @RequestMapping(value = "rest/order")
 public class OrderRestController {
@@ -36,31 +38,56 @@ public class OrderRestController {
     @Autowired
     private ProductService productService;
 
+    /**
+     * @param order
+     * @return
+     * POST requests having order information will trigger creation of new order.
+     * Logic for creating of new order is found in: InMemoryOrderRepositoryImp -> Order create(Order) method
+     */
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
     Order create(@RequestBody Order order) {
         return orderService.create(order);
     }
 
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.GET)
+    /**
+     * @param orderId
+     * @return
+     * Read existing order based on request parameter supplied for orderId
+     */
+    @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public @ResponseBody
-    Order read(@PathVariable(value = "cartId") String orderId) {
+    Order read(@PathVariable(value = "orderId") String orderId) {
         return orderService.read(orderId);
     }
 
-    @RequestMapping(value = "/{cartId}", method = RequestMethod.PUT)
+    /**
+     * @param orderId
+     * @param order
+     * Update existing order with PUT HTTP request. 
+     */
+    @RequestMapping(value = "/{orderId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void update(@PathVariable(value = "cartId") String orderId,
+    public void update(@PathVariable(value = "orderId") String orderId,
             @RequestBody Order order) {
     	orderService.update(orderId, order);
     }
 
+    /**
+     * @param orderId
+     * Deletes existing order
+     */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable(value = "orderId") String orderId) {
     	orderService.delete(orderId);
     }
 
+    /**
+     * @param productId
+     * @param request
+     * Add order item to an existing order, considered as updating the order.
+     */
     @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void addIItem(@PathVariable String productId, HttpServletRequest request) {
@@ -79,6 +106,12 @@ public class OrderRestController {
         orderService.update(sessionId, order);
     }
 
+    /**
+     * @param productId
+     * @param request
+     * Remove an order item from an order, considered as updating the order.
+     * 
+     */
     @RequestMapping(value = "/remove/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void removeItem(@PathVariable String productId, HttpServletRequest request) {

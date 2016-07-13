@@ -20,11 +20,25 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = "/order")
 public class OrderController {
     
+    /**
+     * @param request
+     * @return
+     * When user adds products to shopping cart for the first time, session id is created.
+     * A redirect is then sent to the same page, but this time session id passed as parameter
+     * the GET request. From now on, session id serves as orderId, as well.
+     * 
+     */
     @RequestMapping
     public String get(HttpServletRequest request){
         return "redirect:/order/"+request.getSession(true).getId();
     }
     
+    /**
+     * @param orderId
+     * @param model
+     * @return
+     * Return order page for GET requests having session ids (serving also as orderId)
+     */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public String getCart(@PathVariable(value = "orderId") String orderId, Model model){
         model.addAttribute("orderId", orderId);
