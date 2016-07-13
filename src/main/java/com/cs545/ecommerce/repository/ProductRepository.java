@@ -18,4 +18,5 @@ public interface ProductRepository {
     Product getProductById(String productId);
     List<Product> getProductByCategoryName(String categoryName);
     List<Product> searchProduct(String category, String searchInput);
+    List<Product> searchProduct(String searchInput);
 }

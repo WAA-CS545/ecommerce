@@ -57,5 +57,10 @@ public class ProductServiceImpl implements ProductService{
     public List<Product> searchProduct(String category, String searchInput){
     	return productRepository.searchProduct(category, searchInput);
     }
+
+	@Override
+	public List<Product> searchProduct(String searchInput) {
+		return productRepository.searchProduct(searchInput);
+	}
     
 }

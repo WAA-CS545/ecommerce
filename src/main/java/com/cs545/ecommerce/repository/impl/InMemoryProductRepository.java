@@ -8,6 +8,7 @@ package com.cs545.ecommerce.repository.impl;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -265,5 +266,11 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
     	}
     	return searchResult;
     }
+
+
+	@Override
+	public List<Product> searchProduct(String searchInput) {
+		return this.listOfProduct.stream().filter(p->p.getProductName().contains(searchInput)).collect(Collectors.toList());
+	}
 
 }

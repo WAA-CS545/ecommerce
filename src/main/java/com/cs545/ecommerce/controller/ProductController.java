@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.Product;
@@ -38,5 +39,15 @@ public class ProductController {
 		return "UI/template";
 	}
 	
-	
+	/*
+	 * This is for displaying the single page of the product
+	 */
+	@RequestMapping(value = "/product", method = RequestMethod.GET)
+	public String getProductByName(@RequestParam String searchInput, Model model) {
+		List<Product> products= service.searchProduct(searchInput);
+		
+		model.addAttribute("products", products);
+		model.addAttribute("pageToRender", "jsp/products.jsp");
+		return "UI/template";
+	}
 }

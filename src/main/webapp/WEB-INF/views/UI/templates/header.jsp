@@ -15,8 +15,8 @@
 			
 				<div class="search-box">
 					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
+						<form action="<spring:url value='/product'/>" method="get">
+							<input name="searchInput" class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
 							<input class="sb-search-submit" type="submit" value="">
 							<span class="sb-icon-search"> </span>
 						</form>
