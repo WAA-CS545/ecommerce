@@ -1,26 +1,24 @@
-
+ <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 				<div class="container">
 			<div class="footer-top-at">
 			
 				<div class="col-md-3 amet-sed">
 				<h4>MORE INFO</h4>
 				<ul class="nav-bottom">
-						<li><a href="#">How to order</a></li>
-						<li><a href="#">FAQ</a></li>
-						<li><a href="contact.html">Location</a></li>
-						<li><a href="#">Shipping</a></li>
-						<li><a href="#">Membership</a></li>	
+						<li><a href="<c:url value='/HowToOrder' />">How to order</a></li>
+						<li><a href="<c:url value='/FAQ' />">FAQ</a></li>
+						<li><a href="<c:url value='/contact' /> ">Location</a></li>
+						<li><a href="<c:url value='/Shipping' />">Shipping</a></li>
+						<li><a href="<c:url value='/Membership' />">Membership</a></li>	
 					</ul>	
 				</div>
 				<div class="col-md-3 amet-sed">
 					<h4>CATEGORIES</h4>
 					<ul class="nav-bottom">
-						<li><a href="#">Bed linen</a></li>
-						<li><a href="#">Cushions</a></li>
-						<li><a href="#">Duvets</a></li>
-						<li><a href="#">Pillows</a></li>
-						<li><a href="#">Protectors</a></li>	
-					</ul>
+					<c:foreach items="${categories}" var="category">
+						<li><a href="<c:url value='/category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
+						</c:foreach>
+					 </ul>
 					
 				</div>
 				<div class="col-md-3 amet-sed">
@@ -50,6 +48,6 @@
 			</div>
 		</div>
 		<div class="footer-class">
-		<p>© 2015 Mattress . All Rights Reserved | Design by  <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+		<p>© 2015 Mattress . All Rights Reserved | Design by  <a href="" target="_blank">Group 3 WAA peoject</a> </p>
 		</div>
 		

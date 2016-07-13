@@ -1,6 +1,7 @@
+	 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 	<div class="banner">
 		<div class="container">
-			  <script src="js/responsiveslides.min.js"></script>
+			  <script src="<spring:url value='/resource/js/responsiveslides.min.js' /> "></script>
   <script>
     $(function () {
       $("#slider").responsiveSlides({
@@ -55,7 +56,7 @@
 			<div class="content-top-bottom">
 				<h2>Featured PRODUCTS</h2>
 				<div class="col-md-6 men">
-					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t1.jpg" alt="">
+					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/ConstantImages/t1.jpg' /> " alt="">
 						<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in   b-delay03 ">
 												<span>TRIBECA LIVING</span>	
