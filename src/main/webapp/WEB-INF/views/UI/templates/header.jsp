@@ -24,9 +24,8 @@
 				</div>
 			
 <!-- search-scripts -->
-					<script src="<spring:url value="/resource/js/classie.js" />'"></script>
-					<script src="<spring:url value="/resource/js/uisearch.js" />'"></script>
-										<script>
+					<script src='<spring:url value="/resource/js/classie.js"  />' type='text/javascript'></script>
+					<script src='<spring:url value="/resource/js/uisearch.js"  />' type="text/javascript"></script>					<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
 					<!-- //search-scripts -->

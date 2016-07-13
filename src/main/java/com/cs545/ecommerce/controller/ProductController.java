@@ -28,7 +28,9 @@ public class ProductController {
 	public String getProductById(@PathVariable String productId, Model model) {
 		Product product=service.getProductById(productId);
 		List<Category> categories=rep.getAllCategories();
-		List<Product> subProducts=service.getProductsByCategoryName(product.getCategory().getCategoryName());
+		//List<Product> subProducts=service.getProductsByCategoryName(product.getCategory().getCategoryName());
+		List<Product> subProducts=service.getAllProducts();
+		
 		model.addAttribute("subProducts", subProducts);
 		model.addAttribute("categories", categories);
 		model.addAttribute("product", product);

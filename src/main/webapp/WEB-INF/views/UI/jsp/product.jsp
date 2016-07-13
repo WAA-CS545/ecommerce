@@ -93,7 +93,7 @@ $(window).load(function() {
 			<!---->
 
 		<div class=" bottom-product">
-					<c:foreEach  begin="0" end="3" items="${subProducts}" var="pr">
+					<c:forEach  begin="0" end="2" items="${subProducts}" var="pr">
 					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">
 							<a href="<spring:url value='/product/${pr.getProductId()}' />"><img class="img-responsive" src="<spring:url value='/resource/images/${pr.getImages().get(0).getImageURL()}' /> " alt="">
@@ -102,12 +102,12 @@ $(window).load(function() {
 							</div>
 						</a>	
 						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>${pr.getProductName()}</p>
+						<p class="tun"><span>${pr.getProductName()}</span></p>
 						<div class="ca-rt">
 							<a href="" class="item_add"><p class="number item_price"><i> </i>${pr.getUnitPrice()}</p></a>						
 						</div>						
 					</div>
-					</c:foreEach>
+					</c:forEach>
 					
 					
 					<div class="clearfix"> </div>
