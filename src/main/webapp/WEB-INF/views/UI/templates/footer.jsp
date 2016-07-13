@@ -5,11 +5,11 @@
 				<div class="col-md-3 amet-sed">
 				<h4>MORE INFO</h4>
 				<ul class="nav-bottom">
-						<li><a href="<spring:url value='/HoToOrder' />">How to order</a></li>
-						<li><a href="<c:url value='/FAQ' />">FAQ</a></li>
-						<li><a href="<c:url value='/contact' /> ">Location</a></li>
-						<li><a href="<c:url value='/Shipping' />">Shipping</a></li>
-						<li><a href="<c:url value='/Membership' />">Membership</a></li>	
+						<li><a href="<spring:url value='/howToOrder' />">How to order</a></li>
+						<li><a href="<spring:url value='/faq' />">FAQ</a></li>
+						<li><a href="<spring:url value='/location' /> ">Location</a></li>
+						<li><a href="<spring:url value='/shipping' /> ">Shipping</a></li>
+						<li><a href="<spring:url value='/membership' />">Membership</a></li>	
 					</ul>	
 				</div>
 				<div class="col-md-3 amet-sed">
