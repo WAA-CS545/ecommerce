@@ -15,7 +15,7 @@ import com.cs545.ecommerce.service.ProductService;
 @Controller
 public class HomeController {
 	@Autowired
-	private ProductService service;
+	private ProductService pService;
 	@Autowired
 	private InMemoryCategoryRepository rep;
 
@@ -24,8 +24,11 @@ public class HomeController {
 	public String welcome(Model model) {
 		
 		List<Category> categories=rep.getAllCategories();
+		List<Product> homeProducts=pService.getAllProducts();
+		
 		model.addAttribute("categories", categories);
-	
+	  
+	    model.addAttribute("homeProducts", homeProducts);
 		model.addAttribute("pageToRender", "jsp/home.jsp");
 		
 		return "UI/template";

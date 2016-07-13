@@ -15,10 +15,7 @@ import com.cs545.ecommerce.domain.Image;
 import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.ProductRepository;
 
-/**
- *
- * @author Solomon Kassahun
- */
+
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
@@ -28,91 +25,169 @@ public class InMemoryProductRepository implements ProductRepository {
     public InMemoryProductRepository() {
         listOfProduct = new ArrayList<Product>();
 
-        Product iPhone = new Product("P1234", "iPhone", BigDecimal.valueOf(499));
-        iPhone.setDescription("iPhone 7");
-        iPhone.setCategory(new Category("Electronics", "Cell phones"));
-        iPhone.setManufacturer("Apple");
-        iPhone.setUnitsInStock(100);
+        Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
+        tribica.setDescription("Tribica living");
+        tribica.setCategory(new Category("Matrices", "Tribica"));
+        tribica.setManufacturer("American Matrices");
+        tribica.setUnitsInStock(100);
         images = new ArrayList<Image>();
-        images.add(new Image("iPhone 7", "P1234"));
-        iPhone.setImages(images);
+        images.add(new Image("Tribica living", "P1234.jpg"));
+        tribica.setImages(images);
+        
+        Product clarica = new Product("P1235", "Clarica", BigDecimal.valueOf(499));
+        clarica.setDescription("Clarica");
+        clarica.setCategory(new Category("Matrices", "Clarica"));
+        clarica.setManufacturer("American Matrices");
+        clarica.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("Clarica", "P1235.jpg"));
+        clarica.setImages(images);
+        
+        Product colormate = new Product("P1236", "Colormate", BigDecimal.valueOf(499));
+        colormate.setDescription("Colormate");
+        colormate.setCategory(new Category("Matrices", "Colormate"));
+        colormate.setManufacturer("American Matrices");
+        colormate.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("Colormate", "P1236.jpg"));
+        colormate.setImages(images);
+        
+        Product herlequin = new Product("P1237", "Herlequin", BigDecimal.valueOf(499));
+        herlequin.setDescription("herlequin");
+        herlequin.setCategory(new Category("Matrices", "herlequin"));
+        herlequin.setManufacturer("American Matrices");
+        herlequin.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("herlequin", "P1237.jpg"));
+        herlequin.setImages(images);
+        
+        Product littlehome = new Product("P1238", "Little Home", BigDecimal.valueOf(499));
+        littlehome.setDescription("littlehome");
+        littlehome.setCategory(new Category("Matrices", "littlehome"));
+        littlehome.setManufacturer("American Matrices");
+        littlehome.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("littlehome", "P1238.jpg"));
+        littlehome.setImages(images);
+        
+        Product clarissa = new Product("P1240", "Clarissa", BigDecimal.valueOf(499));
+        clarissa.setDescription("clarissa");
+        clarissa.setCategory(new Category("Matrices", "clarissa"));
+        clarissa.setManufacturer("American Matrices");
+        clarissa.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("clarissa", "P1240.jpg"));
+        littlehome.setImages(images);
+        
+        Product essential = new Product("P1241", "Essential", BigDecimal.valueOf(499));
+        essential.setDescription("Essential");
+        essential.setCategory(new Category("Matrices", "Essential"));
+        essential.setManufacturer("American Matrices");
+        essential.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("essential", "P1241.jpg"));
+        littlehome.setImages(images);
+        
+        Product tribecalliving = new Product("P1242", "Tribecal Living", BigDecimal.valueOf(499));
+        tribecalliving.setDescription("tribecalliving");
+        tribecalliving.setCategory(new Category("Matrices", "tribecalliving"));
+        tribecalliving.setManufacturer("American Matrices");
+        tribecalliving.setUnitsInStock(100);
+        images = new ArrayList<Image>();
+        images.add(new Image("tribecalliving", "P1242.jpg"));
+        littlehome.setImages(images);
+        
 
-        Product nexus7 = new Product("P1235", "Nexus 7", BigDecimal.valueOf(350));
+        
+        Product nexus7 = new Product("P1250", "Nexus 7", BigDecimal.valueOf(350));
         nexus7.setDescription("Nexus 7 tablet");
         nexus7.setCategory(new Category("Electronics", "Tablet"));
         nexus7.setManufacturer("Asus");
         nexus7.setUnitsInStock(500);
         images = new ArrayList<Image>();
-        images.add(new Image("Nexus 7", "P1235"));
+        images.add(new Image("Nexus 7", "P1235.jpg"));
         nexus7.setImages(images);
 
 
-        Product dellLatitude = new Product("P1236", "Dell Latitude", BigDecimal.valueOf(700));
+        Product dellLatitude = new Product("P1256", "Dell Latitude", BigDecimal.valueOf(700));
         dellLatitude.setDescription("Dell latitude laptop");
         dellLatitude.setCategory(new Category("Computers", "Laptops"));
         dellLatitude.setManufacturer("Dell");
         dellLatitude.setUnitsInStock(50);
         images = new ArrayList<Image>();
-        images.add(new Image("Dell latitude", "P1236"));
+        images.add(new Image("Dell latitude", "P1236.jpg"));
         dellLatitude.setImages(images);
         
-        Product hpPavilion = new Product("P1237", "HP Pavilion", BigDecimal.valueOf(200));
+        Product hpPavilion = new Product("P1260", "HP Pavilion", BigDecimal.valueOf(200));
         hpPavilion.setDescription("Dual Core PC from HP");
         hpPavilion.setCategory(new Category("Computers", "PCs"));
         hpPavilion.setManufacturer("HP");
         hpPavilion.setUnitsInStock(40);
         images = new ArrayList<Image>();
-        images.add(new Image("HP Pavilion", "P1237"));
+        images.add(new Image("HP Pavilion", "P1260.jpg"));
         hpPavilion.setImages(images);
         
-        Product mensweater = new Product("P1238", "Men's Sweater", BigDecimal.valueOf(20));
+        Product mensweater = new Product("P1290", "Men's Sweater", BigDecimal.valueOf(20));
         mensweater.setDescription("Men's sweater from Amani");
         mensweater.setCategory(new Category("Clothes", "Men clothes"));
         mensweater.setManufacturer("Geogio Armani");
         mensweater.setUnitsInStock(15);
         images = new ArrayList<Image>();
-        images.add(new Image("Men's Sweater", "P1238"));
+        images.add(new Image("Men's Sweater", "P1290.jpg"));
         mensweater.setImages(images);
         
-        Product hoodie = new Product("P1239", "Men hoodie", BigDecimal.valueOf(10));
+        Product hoodie = new Product("P1298", "Men hoodie", BigDecimal.valueOf(10));
         hoodie.setDescription("Men's hoodie from Armani");
         hoodie.setCategory(new Category("Clothes", "Men clothes"));
         hoodie.setManufacturer("Geogio Armani");
         hoodie.setUnitsInStock(15);
         images = new ArrayList<Image>();
-        images.add(new Image("Men hoodie", "P1239"));
+        images.add(new Image("Men hoodie", "P1298.jpg"));
         hoodie.setImages(images);
         
-        Product ladiesdress = new Product("P1240", "Ladies dress", BigDecimal.valueOf(30));
+        Product ladiesdress = new Product("P1299", "Ladies dress", BigDecimal.valueOf(30));
         ladiesdress.setDescription("Ladies' dress from Takobel");
         ladiesdress.setCategory(new Category("Clothes", "Women clothes"));
         ladiesdress.setManufacturer("Takobel");
         ladiesdress.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Ladies dress", "P1240"));
+        images.add(new Image("Ladies dress", "P1299.jpg"));
         ladiesdress.setImages(images);
         
-        Product mensshoe = new Product("P1241", "Men shoe", BigDecimal.valueOf(80));
+        Product mensshoe = new Product("P1288", "Men shoe", BigDecimal.valueOf(80));
         mensshoe.setDescription("Men's show from Clarks");
         mensshoe.setCategory(new Category("Shoes", "Men shoes"));
         mensshoe.setManufacturer("Clarks");
         mensshoe.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Men shoe", "P1241"));
+        images.add(new Image("Men shoe", "P1288.jpg"));
         mensshoe.setImages(images);
         
-        Product womenshoe = new Product("P1242", "Women shoe", BigDecimal.valueOf(80));
+        Product womenshoe = new Product("P1277", "Women shoe", BigDecimal.valueOf(80));
         womenshoe.setDescription("Ladies' shoes from Clarks");
         womenshoe.setCategory(new Category("Shoes", "Women shoes"));
         womenshoe.setManufacturer("Clarks");
         womenshoe.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Women shoe", "P1241"));
+        images.add(new Image("Women shoe", "P1277.jpg"));
         womenshoe.setImages(images);
 
-        listOfProduct.add(iPhone);
+        listOfProduct.add(tribica);
+        listOfProduct.add(clarica);
+        listOfProduct.add(colormate);
+        listOfProduct.add(herlequin);
+        listOfProduct.add(littlehome);
+        listOfProduct.add(clarissa);
+        listOfProduct.add(essential);
+        listOfProduct.add(tribecalliving);
         listOfProduct.add(nexus7);
         listOfProduct.add(dellLatitude);
+        listOfProduct.add(hpPavilion);
+        listOfProduct.add(mensweater);
+        listOfProduct.add(hoodie);
+        listOfProduct.add(ladiesdress);
+        listOfProduct.add(mensshoe);
+        listOfProduct.add(womenshoe);
 
     }
 

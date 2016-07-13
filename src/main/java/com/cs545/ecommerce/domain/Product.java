@@ -55,6 +55,7 @@ public class Product {
 	}
 
 	public List<Image> getImages() {
+		
 		return images;
 	}
 

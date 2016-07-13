@@ -56,10 +56,11 @@
 			<div class="content-top-bottom">
 				<h2>Featured PRODUCTS</h2>
 				<div class="col-md-6 men">
-					<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/ConstantImages/t1.jpg' /> " alt="">
+				
+					<a href="<spring:url value='/product/${homeProducts.get(0).getProductId()}' /> " class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(0).getImages().get(0).getImageURL()}' /> " alt="">
 						<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in   b-delay03 ">
-												<span>TRIBECA LIVING</span>	
+												<span>${homeProducts.get(0).getProductName()}</span>	
 											</h3>
 										</div>
 					</a>
@@ -68,31 +69,33 @@
 				</div>
 				<div class="col-md-6">
 					<div class="col-md1 ">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t2.jpg" alt="">
+						<a href="<spring:url value='/product/${homeProducts.get(1).getProductId()}' /> " class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(1).getImages().get(0).getImageURL()}' /> " alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in1   b-delay03 ">
-												<span>CLARISSA</span>	
+												<span>${homeProducts.get(1).getProductName()}</span>	
 											</h3>
 										</div>
 						</a>
 						
 					</div>
 					<div class="col-md2">
+					
 						<div class="col-md-6 men1">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t3.jpg" alt="">
+							<a href="<spring:url value='/product/${homeProducts.get(2).getProductId()}' /> " class="b-link-stripe b-animate-go  thickbox">
+							<img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(2).getImages().get(0).getImageURL()}' />" alt="${homeProducts.get(2).getProductName()}" />
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>COLORMATE</span>	
+												<span>${homeProducts.get(2).getProductName()}</span>	
 											</h3>
 										</div>
 							</a>
 							
 						</div>
 						<div class="col-md-6 men2">
-							<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/t4.jpg" alt="">
+							<a href="<spring:url value='/product/${homeProducts.get(3).getProductId()}' /> " class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(3).getImages().get(0).getImageURL()}' />" alt="${homeProducts.get(3).getProductName()}">
 									<div class="b-wrapper">
 											<h3 class="b-animate b-from-top top-in2   b-delay03 ">
-												<span>HERLEQUIN</span>	
+												<span>${homeProducts.get(3).getProductName()}</span>	
 											</h3>
 										</div>
 							</a>
@@ -107,50 +110,51 @@
 				<h1>NEW PRODUCTS</h1>
 				<div class="grid-in">
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi.jpg" alt="">
+						<a href="<spring:url value='/product/${homeProducts.get(4).getProductId()}' />" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(4).getImages().get(0).getImageURL()}' />" alt="">
 							<div class="b-wrapper">
 								<h3 class="b-animate b-from-left    b-delay03 ">
-									<span>TRIBECA LIVING</span>
+									<span>${homeProducts.get(4).getProductName()}</span>
 									
 								</h3>
 							</div>
 						</a>
 				
 
-					<p><a href="single.html">TRIBECA LIVING</a></p>
+					<p><a href="<spring:url value='/product/${homeProducts.get(4).getProductId()}' />">${homeProducts.get(4).getProductName()}</a></p>
 					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 					</div>
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi1.jpg" alt="">
+						<a href="<spring:url value='/product/${homeProducts.get(5).getProductId()}' />" class="b-link-stripe b-animate-go  thickbox">
+						<img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(5).getImages().get(0).getImageURL()}' />" alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>ESSENTIAL</span>	
+												<span>${homeProducts.get(5).getProductName()}</span>	
 											</h3>
 										</div>
 						</a>
-					<p><a href="single.html">ESSENTIAL</a></p>
+					<p><a href="<spring:url value='/product/${homeProducts.get(5).getProductId()}' />">${homeProducts.get(5).getProductName()}</a></p>
 					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 					</div>
 					<div class="col-md-3 grid-top simpleCart_shelfItem">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi2.jpg" alt="">
+						<a href="<spring:url value='/product/${homeProducts.get(6).getProductId()}' />" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(6).getImages().get(0).getImageURL()}' />" alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>CLARISSA</span>	
+												<span>${homeProducts.get(6).getProductName()}</span>	
 											</h3>
 										</div>
 						</a>
-					<p><a href="single.html">CLARISSA</a></p>
+					<p><a href="<spring:url value='/product/${homeProducts.get(6).getProductId()}' />">${homeProducts.get(6).getProductName()}</a></p>
 					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 					</div>
 					<div class="col-md-3 grid-top">
-						<a href="single.html" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="images/pi4.jpg" alt="">
+						<a href="<spring:url value='/product/${homeProducts.get(7).getProductId()}' />" class="b-link-stripe b-animate-go  thickbox"><img class="img-responsive" src="<spring:url value='/resource/images/${homeProducts.get(7).getImages().get(0).getImageURL()}' />" alt="">
 							<div class="b-wrapper">
 											<h3 class="b-animate b-from-left    b-delay03 ">
-												<span>LITTLE HOME</span>	
+												<span>${homeProducts.get(7).getProductName()}</span>	
 											</h3>
 										</div>
 						</a>
-					<p><a href="single.html">LITTLE HOME</a></p>
+					<p><a href="<spring:url value='/product/${homeProducts.get(7).getProductId()}' />">${homeProducts.get(7).getProductName()}</a></p>
 					<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>
 					</div>
 							<div class="clearfix"> </div>
