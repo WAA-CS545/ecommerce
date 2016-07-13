@@ -60,8 +60,8 @@
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-									<c:foreach items="${cities}" var="city">
-										<li><a href="<c:url value='/city/${city.getCityName()}'">${city.getCityName()}</a></li>
+									<c:foreach items="${categories}" var="category">
+										<li><a href="<c:url value='/city/${category.getCategoryName()}'">${category.getCategoryName()}</a></li>
 										</c:foreach>
 									</ul>	
 								</div>							
@@ -109,7 +109,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:foreach items="${categories}" var="category">
-										<li><a href="<c:url value='/category/${category.getCategoryName()}' />" >${category.getCategoryName()}</a></li>
+										<li><a href="<c:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()} </a></li>
 										</c:foreach>
 										
 										
