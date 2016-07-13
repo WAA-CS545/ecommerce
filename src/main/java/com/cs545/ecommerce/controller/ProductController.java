@@ -28,6 +28,8 @@ public class ProductController {
 	public String getProductById(@PathVariable String productId, Model model) {
 		Product product=service.getProductById(productId);
 		List<Category> categories=rep.getAllCategories();
+		List<Product> subProducts=service.getProductsByCategoryName(product.getCategory().getCategoryName());
+		model.addAttribute("subProducts", subProducts);
 		model.addAttribute("categories", categories);
 		model.addAttribute("product", product);
 		model.addAttribute("pageToRender", "jsp/product.jsp");

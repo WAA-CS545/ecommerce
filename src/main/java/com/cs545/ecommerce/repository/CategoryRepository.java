@@ -16,5 +16,6 @@ public interface CategoryRepository {
 	List<String> getAllCategoryNames();
 	List<Category> getAllCategories();
 	List<String> getCategorNamesIn(String mainCategoryName);
+	Category getCategoryByName(String name);
 
 }

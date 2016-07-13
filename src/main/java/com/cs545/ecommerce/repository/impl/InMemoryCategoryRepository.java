@@ -29,6 +29,8 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		mainCategories.add("Shoes");
 		mainCategories.add("Computers");
 		mainCategories.add("Electronics");
+		mainCategories.add("Matrices");
+		
 		
 		Category category1 = new Category("Clothes", "Men clothes");
 		Category category2 = new Category("Clothes", "Women clothes");
@@ -41,6 +43,14 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		Category category9 = new Category("Electronics", "Cell phones");
 		Category category10 = new Category("Electronics", "Cell phone accessories");
 		Category category11 = new Category("Electronics", "Tablets");
+		Category category12 = new Category("Matrices", "Tribica");
+		Category category13 = new Category("Matrices", "Clarica");
+		Category category14 = new Category("Matrices", "Colormate");
+		Category category15 = new Category("Matrices", "Herlequin");
+		Category category16 = new Category("Matrices", "Littlehome");
+		Category category17 = new Category("Matrices", "clarissa");
+		Category category18 = new Category("Matrices", "Essential");
+		Category category19 = new Category("Matrices", "Tribecalliving");
 		
 		categories.add(category1);
 		categories.add(category2);
@@ -53,6 +63,14 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		categories.add(category9);
 		categories.add(category10);
 		categories.add(category11);
+		categories.add(category12);
+		categories.add(category13);
+		categories.add(category14);
+		categories.add(category15);
+		categories.add(category16);
+		categories.add(category17);
+		categories.add(category18);
+		categories.add(category19);
 	}
 
 	/* (non-Javadoc)
@@ -85,6 +103,15 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 			
 		}
 		return categoryNames;
+	}
+	public Category getCategoryByName(String categoryName){
+		Category category=new Category();
+		for(Category cat:categories){
+			if(cat.getCategoryName().equals(categoryName)){
+				category=cat;				
+			}	
+		}
+		return category;
 	}
 
 }
