@@ -101,7 +101,7 @@
  					    </c:otherwise>
 					</c:choose>	
 								
-				<li><a class="color6" href="<spring:url value='/contact'/>" >Contact</a></li>
+				<li><a class="color6" href="<spring:url value='/jsp/ContactUs'/>" >Contact</a></li>
 			  </ul> 
 			</div>
 				
