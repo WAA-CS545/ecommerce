@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.domain.Category;
+import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.CategoryRepository;
 
 /**
@@ -112,5 +113,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		}
 		return null;
 	}
+
+	
 
 }
