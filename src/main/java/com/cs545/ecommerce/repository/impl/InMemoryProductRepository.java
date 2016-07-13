@@ -23,6 +23,7 @@ import com.cs545.ecommerce.repository.ProductRepository;
 public class InMemoryProductRepository implements ProductRepository {
 
 private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
+
     private final List<Product> listOfProduct;
     private List<Image> images;
 
@@ -243,7 +244,8 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
     public List<Product> getProductByCategoryName(String categoryName){
     	List<Product> productsInCategory = new ArrayList<Product>();
     	for(Product product : listOfProduct){
-    		if(product.getCategory().getCategoryName().equals(categoryName)){
+    		String catName = product.getCategory().getCategoryName();
+    		if(catName.equals(categoryName)){
     			productsInCategory.add(product);
     		}    		
     	}

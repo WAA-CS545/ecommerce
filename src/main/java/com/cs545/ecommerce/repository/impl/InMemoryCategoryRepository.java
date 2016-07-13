@@ -104,14 +104,13 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		}
 		return categoryNames;
 	}
-	public Category getCategoryByName(String categoryName){
-		Category category=new Category();
+	public Category getCategoryByName(String categoryName){		
 		for(Category cat:categories){
 			if(cat.getCategoryName().equals(categoryName)){
-				category=cat;				
+				return cat;				
 			}	
 		}
-		return category;
+		return null;
 	}
 
 }
