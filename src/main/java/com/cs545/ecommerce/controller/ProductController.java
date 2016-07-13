@@ -36,9 +36,10 @@ public class ProductController {
 	/*
 	 * This is for displaying the single page of the product
 	 */
-	// @RequestMapping(value = "/product/", method = RequestMethod.GET)
-	// public String getProductByIdd(@PathVariable String productId, Model
-	// model) {
-	// return "";
-	// }
+	 @RequestMapping(value = "/home/", method = RequestMethod.GET)
+	 public String getProductByIdd(@PathVariable String productId, Model
+	 model) {
+		 
+	 return "UI/template";
+	 }
 }

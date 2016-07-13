@@ -1,12 +1,12 @@
-
+ <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 	<div class="header-top">
 		<div class="container">
 			<div class="social">
 				<ul>
-					<li><a href="#"><i class="facebok"> </i></a></li>
-					<li><a href="#"><i class="twiter"> </i></a></li>
-					<li><a href="#"><i class="inst"> </i></a></li>
-					<li><a href="#"><i class="goog"> </i></a></li>
+					<li><a href="http://facbook.com"><i class="facebok"> </i></a></li>
+					<li><a href="http://twiter.com"><i class="twiter"> </i></a></li>
+					<li><a href="http://inst.com"><i class="inst"> </i></a></li>
+					<li><a href="http://google.com"><i class="goog"> </i></a></li>
 						<div class="clearfix"></div>	
 				</ul>
 			</div>
@@ -23,9 +23,9 @@
 				</div>
 			
 <!-- search-scripts -->
-					<script src="js/classie.js"></script>
-					<script src="js/uisearch.js"></script>
-						<script>
+					<script src="<spring:url value="/resource/js/classie.js" htmlEscape="true"/>'"></script>
+					<script src="<spring:url value="/resource/js/uisearch.js" htmlEscape="true"/>'"></script>
+										<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
 					<!-- //search-scripts -->
@@ -33,9 +33,10 @@
 				<div class="ca-r">
 					<div class="cart box_1">
 						<a href="checkout.html">
-						<h3> <div class="total">
+						<h3> 
+						<div class="total">
 							<span class="simpleCart_total"></span> </div>
-							<img src="images/cart.png" alt=""/></h3>
+							<img src="<spring:url value='/resources/images/ConstantImages/cart.png' />" alt=""/></h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
@@ -49,11 +50,11 @@
 		<div class="container">
 			<div class="head-top">
 				<div class="logo">
-					<h1><a href="index.html">Mattress</a></h1>
+					<h1><a href="<spring:url value='/' />">Mattress</a></h1>
 				</div>
 		  <div class=" h_menu4">
 				<ul class="memenu skyblue">
-					  <li><a class="color8" href="index.html">BED LINEN</a></li>	
+					  <li><a class="color8" href="<spring:url value='/' />">BED LINEN</a></li>	
 				      <li><a class="color1" href="#">CITIES</a>
 				      	<div class="mepanel">
 						<div class="row">
@@ -109,7 +110,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:foreach items="${categories}" var="category">
-										<li><a href="<c:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()} </a></li>
+										<li><a href="<c:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
 										</c:foreach>
 										
 										

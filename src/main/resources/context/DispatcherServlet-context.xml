@@ -13,7 +13,7 @@
  	<context:component-scan base-package="com.cs545.ecommerce.controller, com.cs545.ecommerce.domain, com.cs545.ecommerce.repository, com.cs545.ecommerce.service" />
  	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/resources/views/" />
+		<property name="prefix" value="/WEB-INF/views/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
