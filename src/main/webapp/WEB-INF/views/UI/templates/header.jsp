@@ -1,4 +1,5 @@
  <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 	<div class="header-top">
 		<div class="container">
 			<div class="social">
@@ -61,9 +62,9 @@
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-									<c:foreach items="${categories}" var="category">
-										<li><a href="<c:url value='/city/${category.getCategoryName()}'">${category.getCategoryName()}</a></li>
-										</c:foreach>
+									<c:forEach items="${categories}" var="category">
+										<li><a href="<spring:url value="/city/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
+										</c:forEach>
 									</ul>	
 								</div>							
 							</div>
@@ -109,9 +110,9 @@
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-									<c:foreach items="${categories}" var="category">
-										<li><a href="<c:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
-										</c:foreach>
+									<c:forEach items="${categories}" var="category">
+										<li><a href="<spring:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
+									</c:forEach>
 										
 										
 									</ul>	
@@ -154,8 +155,16 @@
 						  </div>
 						</div>
 			    </li>
-				<li><a class="color4" href="<c:url value='/login' />" >Login</a></li>				
-				<li><a class="color6" href="<c:url value='/contact'/>" >Contact</a></li>
+			    <c:choose>
+					    <c:when test="${empty user}">
+      						<li><a class="color4" href="<spring:url value='/login' />" >Login</a></li>
+      					</c:when>
+					    <c:otherwise>
+		 					<li><a class="color4" href="<spring:url value='/logout' />" >Logout</a></li>
+ 					    </c:otherwise>
+					</c:choose>	
+								
+				<li><a class="color6" href="<spring:url value='/contact'/>" >Contact</a></li>
 			  </ul> 
 			</div>
 				

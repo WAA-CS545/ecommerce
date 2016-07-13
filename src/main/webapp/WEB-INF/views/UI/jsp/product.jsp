@@ -17,9 +17,9 @@
 			  <ul class="slides">
 			  <c:forEach items="${product.getImages()}" var="image">
 			 
-			    <li data-thumb="<spring:url value='/resources/images/${image.getImageURL()}' /> " >
+			    <li data-thumb="<spring:url value='/resource/images/${image.getImageURL()}' /> " >
 			        <div class="thumb-image"> 
-			        <img src="<spring:url value='/resources/images/${image.getImageURL()}' /> " data-imagezoom="true" class="img-responsive"> </div>
+			        <img src="<spring:url value='/resource/images/${image.getImageURL()}' /> " data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
 			    </c:forEach>
 			    </ul>
@@ -30,8 +30,8 @@
 
 
 						<!-- FlexSlider -->
-  <script defer src="js/jquery.flexslider.js"></script>
-<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+  <script  src="<spring:url value='/resource/js/jquery.flexslider.js' /> "></script>
+<link rel="stylesheet" href="<spring:url value='/resource/css/flexslider.css' /> " type="text/css" media="screen" />
 
 <script>
 // Can also be used with $(document).ready()
