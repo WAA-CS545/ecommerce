@@ -33,13 +33,6 @@ public class ProductController {
 		model.addAttribute("pageToRender", "jsp/product.jsp");
 		return "UI/template";
 	}
-	/*
-	 * This is for displaying the single page of the product
-	 */
-	 @RequestMapping(value = "/home/", method = RequestMethod.GET)
-	 public String getProductByIdd(@PathVariable String productId, Model
-	 model) {
-		 
-	 return "UI/template";
-	 }
+	
+	
 }

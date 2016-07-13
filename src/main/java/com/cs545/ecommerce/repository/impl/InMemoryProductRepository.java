@@ -32,6 +32,9 @@ public class InMemoryProductRepository implements ProductRepository {
         tribica.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("Tribica living", "P1234.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         tribica.setImages(images);
         
         Product clarica = new Product("P1235", "Clarica", BigDecimal.valueOf(499));
@@ -41,6 +44,9 @@ public class InMemoryProductRepository implements ProductRepository {
         clarica.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Clarica", "P1238.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         clarica.setImages(images);
         
         Product colormate = new Product("P1236", "Colormate", BigDecimal.valueOf(499));
@@ -50,6 +56,9 @@ public class InMemoryProductRepository implements ProductRepository {
         colormate.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         colormate.setImages(images);
         
         Product herlequin = new Product("P1237", "Herlequin", BigDecimal.valueOf(499));
@@ -58,6 +67,9 @@ public class InMemoryProductRepository implements ProductRepository {
         herlequin.setManufacturer("American Matrices");
         herlequin.setUnitsInStock(100);
         images = new ArrayList<Image>();
+        images.add(new Image("herlequin", "P1237.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
         images.add(new Image("herlequin", "P1237.jpg"));
         herlequin.setImages(images);
         
@@ -68,6 +80,9 @@ public class InMemoryProductRepository implements ProductRepository {
         littlehome.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("littlehome", "P1238.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         littlehome.setImages(images);
         
         Product clarissa = new Product("P1240", "Clarissa", BigDecimal.valueOf(499));
@@ -77,6 +92,9 @@ public class InMemoryProductRepository implements ProductRepository {
         clarissa.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("clarissa", "P1240.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         clarissa.setImages(images);
         
         Product essential = new Product("P1241", "Essential", BigDecimal.valueOf(499));
@@ -86,6 +104,9 @@ public class InMemoryProductRepository implements ProductRepository {
         essential.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("essential", "P1241.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         essential.setImages(images);
         
         Product tribecalliving = new Product("P1242", "Tribecal Living", BigDecimal.valueOf(499));
@@ -95,6 +116,9 @@ public class InMemoryProductRepository implements ProductRepository {
         tribecalliving.setUnitsInStock(100);
         images = new ArrayList<Image>();
         images.add(new Image("tribecalliving", "P1242.jpg"));
+        images.add(new Image("Clarica", "P1235.jpg"));
+        images.add(new Image("Colormate", "P1236.jpg"));
+        images.add(new Image("herlequin", "P1237.jpg"));
         tribecalliving.setImages(images);
         
 
