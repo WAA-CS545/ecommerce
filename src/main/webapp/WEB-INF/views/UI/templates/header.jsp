@@ -24,8 +24,8 @@
 				</div>
 			
 <!-- search-scripts -->
-					<script src="<spring:url value="/resource/js/classie.js" htmlEscape="true"/>'"></script>
-					<script src="<spring:url value="/resource/js/uisearch.js" htmlEscape="true"/>'"></script>
+					<script src="<spring:url value="/resource/js/classie.js" />'"></script>
+					<script src="<spring:url value="/resource/js/uisearch.js" />'"></script>
 										<script>
 							new UISearch( document.getElementById( 'sb-search' ) );
 						</script>
@@ -37,7 +37,7 @@
 						<h3> 
 						<div class="total">
 							<span class="simpleCart_total"></span> </div>
-							<img src="<spring:url value='/resources/images/ConstantImages/cart.png' />" alt=""/></h3>
+							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/></h3>
 						</a>
 						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
 
@@ -51,12 +51,12 @@
 		<div class="container">
 			<div class="head-top">
 				<div class="logo">
-					<h1><a href="<spring:url value='/' />">Mattress</a></h1>
+					<h1><a href="<spring:url value='/' />">E shopping</a></h1>
 				</div>
 		  <div class=" h_menu4">
 				<ul class="memenu skyblue">
-					  <li><a class="color8" href="<spring:url value='/' />">BED LINEN</a></li>	
-				      <li><a class="color1" href="#">CITIES</a>
+					  <li><a class="color8" href="<spring:url value='/Clothes' />">Clothes</a></li>	
+				      <li><a class="color1" href="<spring:url value='/Mattrices' />">Mattrices</a>
 				      	<div class="mepanel">
 						<div class="row">
 							<div class="col1">
@@ -68,43 +68,12 @@
 									</ul>	
 								</div>							
 							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Alpaca</a></li>
-										<li><a href="products.html">Cashmere</a></li>
-										<li><a href="products.html">Cotton</a></li>
-										<li><a href="products.html">Cotton Blend</a></li>
-										<li><a href="products.html">Down</a></li>
-										<li><a href="products.html">Down Alternative</a></li>
-										<li><a href="products.html">Egyptian Cotton</a></li>
-										<li><a href="products.html">Modal</a></li>
-										<li><a href="products.html">Pima Cotton</a></li>
-										<li><a href="products.html">Silk </a></li>
-										
-									</ul>	
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Bedskirt</a></li>
-										<li><a href="products.html">Blanket/Throw</a></li>
-										<li><a href="products.html">Collection/Duvet</a></li>
-										<li><a href="products.html">Comforter</a></li>
-										<li><a href="products.html">Comforter Set</a></li>
-										<li><a href="products.html">Decorative Pillow</a></li>
-										<li><a href="products.html">Mattress Pad </a></li>
-										<li><a href="products.html">Mattress Topper</a></li>
-										<li><a href="products.html">Pillow</a></li>
-										<li><a href="products.html">Pillow Protector</a></li>
-									</ul>	
-								</div>												
-							</div>
+							
+						
 						  </div>
 						</div>
 					</li>
-				    <li class="grid"><a class="color2" href="#">CATEGORIES</a>
+				    <li class="grid"><a class="color2" href="<spring:url value='/Electronics' />">Electronics</a>
 					  	<div class="mepanel">
 						<div class="row">
 							<div class="col1">
@@ -118,40 +87,8 @@
 									</ul>	
 								</div>								
 							</div>
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-										<li><a href="products.html">Alpaca</a></li>
-										<li><a href="products.html">Cashmere</a></li>
-										<li><a href="products.html">Cotton</a></li>
-										<li><a href="products.html">Cotton Blend</a></li>
-										<li><a href="products.html">Down</a></li>
-										<li><a href="products.html">Down Alternative</a></li>
-										<li><a href="products.html">Egyptian Cotton</a></li>
-										<li><a href="products.html">Modal</a></li>
-										<li><a href="products.html">Pima Cotton</a></li>
-										<li><a href="products.html">Silk </a></li>
-										
-									</ul>		
-								</div>							
-							</div>
-							<div class="col1">
-								<div class="h_nav">
-									
-									<ul>
-										<li><a href="products.html">Bedskirt</a></li>
-										<li><a href="products.html">Blanket/Throw</a></li>
-										<li><a href="products.html">Collection/Duvet</a></li>
-										<li><a href="products.html">Comforter</a></li>
-										<li><a href="products.html">Comforter Set</a></li>
-										<li><a href="products.html">Decorative Pillow</a></li>
-										<li><a href="products.html">Mattress Pad </a></li>
-										<li><a href="products.html">Mattress Topper</a></li>
-										<li><a href="products.html">Pillow</a></li>
-										<li><a href="products.html">Pillow Protector</a></li>
-									</ul>	
-								</div>												
-							</div>
+							
+						
 						  </div>
 						</div>
 			    </li>

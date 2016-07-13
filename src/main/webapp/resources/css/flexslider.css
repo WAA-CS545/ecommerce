@@ -53,6 +53,7 @@
 .flexslider .slides img {
   width: 100%;
   display: block;
+  height:250px;
 }
 .flexslider .slides:after {
   content: "\0020";
@@ -92,7 +93,7 @@ html[xmlns] .flexslider .slides {
   zoom: 1;
 }
 .flexslider .slides img {
-  height: auto;
+  height: 340px;
 }
 .flex-viewport {
   max-height: 450px;

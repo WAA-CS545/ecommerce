@@ -8,17 +8,21 @@ package com.cs545.ecommerce.repository.impl;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.Image;
 import com.cs545.ecommerce.domain.Product;
+import com.cs545.ecommerce.repository.CategoryRepository;
 import com.cs545.ecommerce.repository.ProductRepository;
 
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
+private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
     private final List<Product> listOfProduct;
     private List<Image> images;
 
@@ -27,7 +31,7 @@ public class InMemoryProductRepository implements ProductRepository {
 
         Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
         tribica.setDescription("Tribica living");
-        tribica.setCategory(new Category("Matrices", "Tribica"));
+        tribica.setCategory(catRep.getCategoryByName("Tribica"));
         tribica.setManufacturer("American Matrices");
         tribica.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -39,7 +43,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product clarica = new Product("P1235", "Clarica", BigDecimal.valueOf(499));
         clarica.setDescription("Clarica");
-        clarica.setCategory(new Category("Matrices", "Clarica"));
+        clarica.setCategory(catRep.getCategoryByName("Clarica"));
         clarica.setManufacturer("American Matrices");
         clarica.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -51,7 +55,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product colormate = new Product("P1236", "Colormate", BigDecimal.valueOf(499));
         colormate.setDescription("Colormate");
-        colormate.setCategory(new Category("Matrices", "Colormate"));
+        colormate.setCategory(catRep.getCategoryByName("Colormate"));
         colormate.setManufacturer("American Matrices");
         colormate.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -63,7 +67,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product herlequin = new Product("P1237", "Herlequin", BigDecimal.valueOf(499));
         herlequin.setDescription("herlequin");
-        herlequin.setCategory(new Category("Matrices", "herlequin"));
+        herlequin.setCategory(catRep.getCategoryByName("Herlequin"));
         herlequin.setManufacturer("American Matrices");
         herlequin.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -75,7 +79,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product littlehome = new Product("P1238", "Little Home", BigDecimal.valueOf(499));
         littlehome.setDescription("littlehome");
-        littlehome.setCategory(new Category("Matrices", "littlehome"));
+        littlehome.setCategory(catRep.getCategoryByName("Littlehome"));
         littlehome.setManufacturer("American Matrices");
         littlehome.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -87,7 +91,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product clarissa = new Product("P1240", "Clarissa", BigDecimal.valueOf(499));
         clarissa.setDescription("clarissa");
-        clarissa.setCategory(new Category("Matrices", "clarissa"));
+        clarissa.setCategory(catRep.getCategoryByName("Clarissa"));
         clarissa.setManufacturer("American Matrices");
         clarissa.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -99,7 +103,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product essential = new Product("P1241", "Essential", BigDecimal.valueOf(499));
         essential.setDescription("Essential");
-        essential.setCategory(new Category("Matrices", "Essential"));
+        essential.setCategory(catRep.getCategoryByName("Essential"));
         essential.setManufacturer("American Matrices");
         essential.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -111,7 +115,7 @@ public class InMemoryProductRepository implements ProductRepository {
         
         Product tribecalliving = new Product("P1242", "Tribecal Living", BigDecimal.valueOf(499));
         tribecalliving.setDescription("tribecalliving");
-        tribecalliving.setCategory(new Category("Matrices", "tribecalliving"));
+        tribecalliving.setCategory(catRep.getCategoryByName("Tribecalliving"));
         tribecalliving.setManufacturer("American Matrices");
         tribecalliving.setUnitsInStock(100);
         images = new ArrayList<Image>();

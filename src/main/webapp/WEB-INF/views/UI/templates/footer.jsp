@@ -5,7 +5,7 @@
 				<div class="col-md-3 amet-sed">
 				<h4>MORE INFO</h4>
 				<ul class="nav-bottom">
-						<li><a href="<c:url value='/HowToOrder' />">How to order</a></li>
+						<li><a href="<spring:url value='/HoToOrder' />">How to order</a></li>
 						<li><a href="<c:url value='/FAQ' />">FAQ</a></li>
 						<li><a href="<c:url value='/contact' /> ">Location</a></li>
 						<li><a href="<c:url value='/Shipping' />">Shipping</a></li>
@@ -15,9 +15,9 @@
 				<div class="col-md-3 amet-sed">
 					<h4>CATEGORIES</h4>
 					<ul class="nav-bottom">
-					<c:foreach items="${categories}" var="category">
+					<c:forEach items="${categories}" var="category">
 						<li><a href="<c:url value='/category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
-						</c:foreach>
+						</c:forEach>
 					 </ul>
 					
 				</div>

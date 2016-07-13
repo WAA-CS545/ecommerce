@@ -93,43 +93,23 @@ $(window).load(function() {
 			<!---->
 
 		<div class=" bottom-product">
+					<c:foreEach  begin="0" end="3" items="${subProducts}" var="pr">
 					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">
-							<a href="#"><img class="img-responsive" src="images/pi3.jpg" alt="">
+							<a href="<spring:url value='/product/${pr.getProductId()}' />"><img class="img-responsive" src="<spring:url value='/resource/images/${pr.getImages().get(0).getImageURL()}' /> " alt="">
 							<div class="pro-grid">
 										<span class="buy-in">Buy Now</span>
 							</div>
 						</a>	
 						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
+						<p class="tun"><span>Lorem ipsum establish</span><br>${pr.getProductName()}</p>
 						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
+							<a href="" class="item_add"><p class="number item_price"><i> </i>${pr.getUnitPrice()}</p></a>						
 						</div>						
 					</div>
-					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-						<div class="product-at ">
-							<a href="#"><img class="img-responsive" src="images/pi1.jpg" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>	
-						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
-						</div>					</div>
-					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
-						<div class="product-at ">
-							<a href="#"><img class="img-responsive" src="images/pi4.jpg" alt="">
-							<div class="pro-grid">
-										<span class="buy-in">Buy Now</span>
-							</div>
-						</a>	
-						</div>
-						<p class="tun"><span>Lorem ipsum establish</span><br>CLARISSA</p>
-						<div class="ca-rt">
-							<a href="#" class="item_add"><p class="number item_price"><i> </i>$500.00</p></a>						
-						</div>					</div>
+					</c:foreEach>
+					
+					
 					<div class="clearfix"> </div>
 				</div>
 </div>
