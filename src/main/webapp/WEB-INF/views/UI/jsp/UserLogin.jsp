@@ -1,4 +1,5 @@
-
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+      <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 	<!-- grow -->
 	<div class="grow">
 		<div class="container">
@@ -11,18 +12,26 @@
 		<div class="account">
 		<div class="account-pass">
 		<div class="col-md-8 account-top">
-			<form>
-				
-			<div> 	
-				<span>Email</span>
-				<input type="text"> 
-			</div>
-			<div> 
-				<span >Password</span>
-				<input type="password">
-			</div>				
-				<input type="submit" value="Login"> 
-			</form>
+			<c:if test="${not empty error}">
+					<div class="alert alert-danger">
+						<spring:message code="AbstractUserDetailsAuthenticationProvider.badCredentials"/><br />
+					</div>
+				</c:if>
+					<c:url var="loginUrl" value="/login" />
+			    	<form action="${loginUrl}" method="post">
+  					<sec:csrfInput />
+                    <fieldset>
+			    	  	<div class="form-group">
+			    		    <input class="form:input-large" placeholder="User Name" name='username' type="text">
+			    		</div>
+			    		<div class="form-group">
+			    			<input class=" form:input-large" placeholder="Password" name='password'  type="password" value="">
+			    		</div>
+			    		<input class="btn btn-lg btn-success btn-mini" type="submit" value="Login">
+			    		<input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
+                             
+			    	</fieldset>
+			      	</form>
 		</div>
 		<div class="col-md-4 left-account ">
 			<a href="single.html"><img class="img-responsive " src="images/s1.jpg" alt=""></a>
