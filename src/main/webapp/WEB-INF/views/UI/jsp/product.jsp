@@ -1,4 +1,5 @@
-
+   <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+       <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 	<!-- grow -->
 	<div class="grow">
 		<div class="container">
@@ -14,11 +15,13 @@
 				<div class="col-md-7 single-top">	
 						<div class="flexslider">
 			  <ul class="slides">
-			  <c:foreach items="${product.getImages()}" var="image">
-			    <li data-thumb="images/${image.getImageURL()}">
-			        <div class="thumb-image"> <img src="images/${image.getImageName()}" data-imagezoom="true" class="img-responsive"> </div>
+			  <c:forEach items="${product.getImages()}" var="image">
+			 
+			    <li data-thumb="<spring:url value='/resources/images/${image.getImageURL()}' /> " >
+			        <div class="thumb-image"> 
+			        <img src="<spring:url value='/resources/images/${image.getImageURL()}' /> " data-imagezoom="true" class="img-responsive"> </div>
 			    </li>
-			    </c:foreach>
+			    </c:forEach>
 			    </ul>
 		</div>
 
