@@ -62,7 +62,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:forEach items="${categories}" var="category">
-										<li><a href="<spring:url value="/city/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
+										<li><a href="<spring:url value="/Category/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
 										</c:forEach>
 									</ul>	
 								</div>							
@@ -79,7 +79,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:forEach items="${categories}" var="category">
-										<li><a href="<spring:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
+										<li><a href="<spring:url value='/Category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
 									</c:forEach>
 										
 										
