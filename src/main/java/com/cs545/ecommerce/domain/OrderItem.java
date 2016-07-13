@@ -18,6 +18,12 @@ public class OrderItem {
 	public OrderItem() {
 		super();
 	}
+	
+	public OrderItem(Product product) {
+		 this.product = product;
+	     this.quantity = 1;
+	     this.totalPrice = product.getUnitPrice();
+	}
 
 	public Product getProduct() {
 		return product;

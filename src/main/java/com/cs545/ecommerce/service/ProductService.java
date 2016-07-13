@@ -14,8 +14,9 @@ import com.cs545.ecommerce.domain.Product;
  * @author Solomon Kassahun
  */
 public interface ProductService {
-    public List<Product> getAllProducts();
-    public Product getProductById(String productId);
-    public void addProduct(Product newProduct);
-    public List<Product> getProductsByCategoryName(String categoryName);
+    List<Product> getAllProducts();
+    Product getProductById(String productId);
+    void addProduct(Product newProduct);
+    List<Product> getProductsByCategoryName(String categoryName);
+    List<Product> searchProduct(String category, String searchInput);
 }
