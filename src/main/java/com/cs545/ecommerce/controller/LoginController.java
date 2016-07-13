@@ -30,16 +30,15 @@ public class LoginController {
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(Model model) {
 		
- 		return "login";
+ 		return "UI/jsp/login";
 	}
- 
 	
 	@RequestMapping(value="/postLogin", method = RequestMethod.GET)
 	public String PostLogin(Model model) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)){    
         	model.addAttribute("user", getPrincipal());
-        	return "redirect:/welcome";
+        	return "redirect:/home";
         }
  		return "redirect:/login";
 	}
@@ -48,7 +47,7 @@ public class LoginController {
 	public String loginerror(Model model) {
  
 		model.addAttribute("error", "true");
-		return "login";
+		return "UI/jsp/login";
  
 	}
  
@@ -59,7 +58,7 @@ public class LoginController {
         if (auth != null){    
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
- 		return "redirect:/welcome";
+ 		return "redirect:/home";
  	}
 	
 	private User getPrincipal(){

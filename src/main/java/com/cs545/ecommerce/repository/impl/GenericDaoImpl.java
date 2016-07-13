@@ -12,7 +12,7 @@ import com.cs545.ecommerce.repository.GenericDao;
 @Repository*/
 public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
-	@PersistenceContext
+	//@PersistenceContext
     protected EntityManager entityManager;
 
     protected Class<T> daoType;
