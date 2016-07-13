@@ -23,20 +23,39 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     ProductRepository productRepository;
     
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.service.ProductService#getAllProducts()
+     */
     public List<Product> getAllProducts() {
         return productRepository.getAllProducts();
     }
 
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.service.ProductService#getProductById(java.lang.String)
+     */
     public Product getProductById(String productId) {
         return productRepository.getProductById(productId);
     }
 
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.service.ProductService#addProduct(com.cs545.ecommerce.domain.Product)
+     */
     public void addProduct(Product newProduct){
         productRepository.getAllProducts().add(newProduct);    
     }
     
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.service.ProductService#getProductsByCategoryName(java.lang.String)
+     */
     public List<Product> getProductsByCategoryName(String categoryName){
     	return productRepository.getProductByCategoryName(categoryName);
+    }
+    
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.service.ProductService#searchProduct(java.lang.String, java.lang.String)
+     */
+    public List<Product> searchProduct(String category, String searchInput){
+    	return productRepository.searchProduct(category, searchInput);
     }
     
 }

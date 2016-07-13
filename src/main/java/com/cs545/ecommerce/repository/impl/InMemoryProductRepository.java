@@ -121,6 +121,9 @@ public class InMemoryProductRepository implements ProductRepository {
         return listOfProduct;
     }
  
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.repository.ProductRepository#getProductById(java.lang.String)
+     */
     public Product getProductById(String productId) {
         for(Product product: listOfProduct){
             if(product.getProductId().equals(productId)) {
@@ -131,6 +134,9 @@ public class InMemoryProductRepository implements ProductRepository {
                 String.format("Product with id %s not found", productId));
     }
     
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.repository.ProductRepository#getProductByCategoryName(java.lang.String)
+     */
     public List<Product> getProductByCategoryName(String categoryName){
     	List<Product> productsInCategory = new ArrayList<Product>();
     	for(Product product : listOfProduct){
@@ -139,6 +145,20 @@ public class InMemoryProductRepository implements ProductRepository {
     		}    		
     	}
     	return productsInCategory; 	
+    }
+    /* (non-Javadoc)
+     * @see com.cs545.ecommerce.repository.ProductRepository#searchProduct(java.lang.String, java.lang.String)
+     */
+    public List<Product> searchProduct(String category, String inputStr){
+    	List<Product> searchResult =  new ArrayList<Product>();
+    	inputStr = inputStr.toLowerCase();
+    	for(Product product : listOfProduct){
+    		String prodName = product.getProductName().toLowerCase();
+    		if(product.getCategory().getCategoryName().equals(category) && prodName.contains(inputStr)){
+    			searchResult.add(product);
+    		}    		    		
+    	}
+    	return searchResult;
     }
 
 }
