@@ -270,7 +270,6 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
 
 	@Override
 	public List<Product> searchProduct(String searchInput) {
-		return this.listOfProduct.stream().filter(p->p.getProductName().contains(searchInput)).collect(Collectors.toList());
+		return this.listOfProduct.stream().filter(p->p.getProductName().toLowerCase().contains(searchInput.toLowerCase())).collect(Collectors.toList());
 	}
-
 }
