@@ -18,6 +18,6 @@ public interface CategoryRepository {
 	List<Category> getAllCategories();
 	List<String> getCategorNamesIn(String mainCategoryName);
 	Category getCategoryByName(String name);
-
+	boolean isExistCategory(String categoryName);
 
 }

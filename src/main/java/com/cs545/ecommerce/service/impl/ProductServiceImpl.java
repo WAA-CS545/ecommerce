@@ -5,11 +5,13 @@
  */
 package com.cs545.ecommerce.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cs545.ecommerce.domain.Product;
+import com.cs545.ecommerce.repository.CategoryRepository;
 import com.cs545.ecommerce.repository.ProductRepository;
 import com.cs545.ecommerce.service.ProductService;
 
@@ -22,7 +24,8 @@ public class ProductServiceImpl implements ProductService{
     
     @Autowired
     ProductRepository productRepository;
-    
+    @Autowired
+    CategoryRepository categoryRepository;
     /* (non-Javadoc)
      * @see com.cs545.ecommerce.service.ProductService#getAllProducts()
      */
@@ -48,6 +51,8 @@ public class ProductServiceImpl implements ProductService{
      * @see com.cs545.ecommerce.service.ProductService#getProductsByCategoryName(java.lang.String)
      */
     public List<Product> getProductsByCategoryName(String categoryName){
+     if(productRepository.getProductByCategoryName(categoryName).isEmpty()==true) return null;
+    	
     	return productRepository.getProductByCategoryName(categoryName);
     }
     
@@ -61,6 +66,12 @@ public class ProductServiceImpl implements ProductService{
 	@Override
 	public List<Product> searchProduct(String searchInput) {
 		return productRepository.searchProduct(searchInput);
+	}
+
+	@Override
+	public List<Product> getProductsByMainCat(String name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
     
 }

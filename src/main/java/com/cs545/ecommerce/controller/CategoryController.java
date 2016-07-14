@@ -42,6 +42,7 @@ public class CategoryController {
 		model.addAttribute("pageToRender", "jsp/Category.jsp");
 		return "UI/template";
 	}
+
 	@RequestMapping(value = "/Electronics")
 	public String getElectronics(Model model) {
 		List<Product> products = productService.getAllProducts();
@@ -52,17 +53,19 @@ public class CategoryController {
 		model.addAttribute("pageToRender", "jsp/Category.jsp");
 		return "UI/template";
 	}
-	
-	@RequestMapping(value = "/Category/{categoryName}",method=RequestMethod.GET)
+
+	@RequestMapping(value = "/Category/{categoryName}", method = RequestMethod.GET)
 	public String getCategoryByName(@PathVariable("categoryName") String caregoryName, Model model) {
-		List<Product> products = productService.getAllProducts();
+
+		if (productService.getProductsByCategoryName(caregoryName) != null)
+		model.addAttribute("products", productService.getProductsByCategoryName(caregoryName));
+
 		List<Category> categories = catservice.getAllCategories();
 		model.addAttribute("categories", categories);
-		model.addAttribute("products", products);
+
 		model.addAttribute("categoryName", "Electronics Category");
 		model.addAttribute("pageToRender", "jsp/Category.jsp");
 		return "UI/template";
 	}
-	
 
 }
