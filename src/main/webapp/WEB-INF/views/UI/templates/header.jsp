@@ -15,8 +15,8 @@
 			
 				<div class="search-box">
 					<div id="sb-search" class="sb-search">
-						<form>
-							<input class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
+						<form action="<spring:url value='/product'/>" method="get">
+							<input name="searchInput" class="sb-search-input" placeholder="Enter your search term..." type="search"  id="search">
 							<input class="sb-search-submit" type="submit" value="">
 							<span class="sb-icon-search"> </span>
 						</form>
@@ -62,7 +62,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:forEach items="${categories}" var="category">
-										<li><a href="<spring:url value="/city/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
+										<li><a href="<spring:url value="/Category/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
 										</c:forEach>
 									</ul>	
 								</div>							
@@ -79,7 +79,7 @@
 								<div class="h_nav">
 									<ul>
 									<c:forEach items="${categories}" var="category">
-										<li><a href="<spring:url value='/category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
+										<li><a href="<spring:url value='/Category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
 									</c:forEach>
 										
 										

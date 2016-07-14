@@ -9,6 +9,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.domain.Category;
+import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.CategoryRepository;
 
 /**
@@ -48,7 +49,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		Category category14 = new Category("Matrices", "Colormate");
 		Category category15 = new Category("Matrices", "Herlequin");
 		Category category16 = new Category("Matrices", "Littlehome");
-		Category category17 = new Category("Matrices", "clarissa");
+		Category category17 = new Category("Matrices", "Clarissa");
 		Category category18 = new Category("Matrices", "Essential");
 		Category category19 = new Category("Matrices", "Tribecalliving");
 		
@@ -112,5 +113,14 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		}
 		return null;
 	}
+	@Override
+	public boolean isExistCategory(String categoryName) {
+		for(Category cat:categories){
+			if(cat.getCategoryName().equals(categoryName)) return true;
+		}
+		return false;
+	}
+
+	
 
 }

@@ -3,7 +3,7 @@
 	<!-- grow -->
 	<div class="grow">
 		<div class="container">
-			<h2>SEARCH RESULTS</h2>
+			<h2>${categoryName}</h2>
 		</div>
 	</div>
 	<!-- grow -->

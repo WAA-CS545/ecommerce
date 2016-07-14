@@ -19,4 +19,6 @@ public interface ProductService {
     void addProduct(Product newProduct);
     List<Product> getProductsByCategoryName(String categoryName);
     List<Product> searchProduct(String category, String searchInput);
+    List<Product> searchProduct(String searchInput);
+    List<Product> getProductsByMainCat(String name);
 }
