@@ -29,8 +29,9 @@ private InMemoryCategoryRepository catRep;
     private List<Image> images;
 
     public InMemoryProductRepository() {
+    	 catRep = new InMemoryCategoryRepository();
         listOfProduct = new ArrayList<Product>();
-        catRep = new InMemoryCategoryRepository();
+       
 
         Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
         tribica.setDescription("Tribica living");
