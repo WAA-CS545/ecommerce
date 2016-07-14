@@ -38,7 +38,7 @@
 							<span class="simpleCart_total"></span> </div>
 							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/></h3>
 						</a>
-						<p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href='<c:url value = "/order"' class="simpleCart_empty">Empty Cart</a></p>
 
 					</div>
 				</div>

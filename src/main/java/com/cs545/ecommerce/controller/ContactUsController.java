@@ -35,8 +35,7 @@ public class ContactUsController {
 	@RequestMapping(value="/jsp/ContactUs", method = RequestMethod.POST)
 	public String captureContactUsData(Model model, ContactUs contactUsData){
 		List<Category> Matricescategories = catService.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
+		model.addAttribute("Matricescategories", Matricescategories);		
 		model.addAttribute("contactUsData", contactUsData);		
 		model.addAttribute("pageToRender", "jsp/ContactUsConfirm.jsp");
 		return "UI/template";		
