@@ -32,13 +32,13 @@
 
 				<div class="ca-r">
 					<div class="cart box_1">
-						<a href="checkout.html">
+						<a href='<c:url value="/order"></c:url>'>
 						<h3> 
 						<div class="total">
 							<span class="simpleCart_total"></span> </div>
-							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/>USD${orderTotalPrice}</h3>
+							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/>${orderTotalPrice}</h3>
 						</a>
-						<p><a href='<c:url value = "/order"' class="simpleCart_empty"></a></p>
+						<p><a href='<c:url value = "/order"></c:url>' class="simpleCart_empty"></a></p>
 
 					</div>
 				</div>

@@ -15,6 +15,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.service.CategoryService;
@@ -25,6 +26,7 @@ import com.cs545.ecommerce.service.CategoryService;
  */
 @Controller
 @RequestMapping(value = "/order")
+@SessionAttributes("pageToRender")
 public class OrderController {
     @Autowired
     private CategoryService catservice;
@@ -38,8 +40,7 @@ public class OrderController {
      */
     @RequestMapping
     public String get(HttpServletRequest request, Model model){
-    	model.addAttribute("pageToRender", "redirect:/order/"+request.getSession(true).getId());
-        return "redirect:/UI/template";
+        return "redirect:/order/"+request.getSession(true).getId();
     }
     
     /**
@@ -49,11 +50,11 @@ public class OrderController {
      * Return order page for GET requests having session ids (serving also as orderId)
      */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public String getCart(@PathVariable(value = "orderId") String orderId, Model model){
-        model.addAttribute("orderId", orderId);
+    public String getCart(@PathVariable(value = "orderId") String orderId, HttpServletRequest request){
+        request.getSession().setAttribute("orderId", orderId);
 //        List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
 //		model.addAttribute("Matricescategories", Matricescategories);
-        model.addAttribute("pageToRender", "order");		
+        request.getSession().setAttribute("pageToRender", "order");		
         return "redirect:/UI/template";
     }
 }
