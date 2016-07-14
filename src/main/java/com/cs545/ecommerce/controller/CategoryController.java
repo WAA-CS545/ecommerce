@@ -36,7 +36,7 @@ public class CategoryController {
 
 	@RequestMapping(value = "/Mattrices")
 	public String getMattrices(Model model) {
-		List<Product> products = productService.getProductsByMainCat("Mattrices");
+		List<Product> products = productService.getProductsByMainCat("Matrices");
 		List<Category> categories = catservice.getAllCategories();
 		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
 		model.addAttribute("Matricescategories", Matricescategories);

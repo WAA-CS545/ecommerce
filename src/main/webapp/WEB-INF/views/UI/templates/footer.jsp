@@ -17,7 +17,7 @@
 					<h4>CATEGORIES</h4>
 					<ul class="nav-bottom">
 					<c:forEach items="${categories}" var="category" begin="0" end="4">
-						<li><a href="<c:url value='/category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
+						<li><a href="<c:url value='/Category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
 						</c:forEach>
 					 </ul>
 					
