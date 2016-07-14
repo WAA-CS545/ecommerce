@@ -84,7 +84,7 @@ $(window).load(function() {
 							</ul>
 						</div>
 							
-								<a href="#" class="add-cart item_add" ngclick="addToCart('${product.productId}')">ADD TO CART</a>
+								<a href="#" class="add-cart item_add" ng-click="addToCart('${product.productId}')">ADD TO CART</a>
 							
 						</div>
 					</div>

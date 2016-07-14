@@ -65,7 +65,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <th>Action</th>
           </tr>
           <tr ng-repeat="item in order.orderItems">
-            <td>{{item.product.productId}}-{{item.product.name}}</td>
+            <td>{{item.product.productId}}-{{item.product.productName}}</td>
             <td>{{item.product.unitPrice}}</td>
             <td>{{item.quantity}}</td>
             <td>{{item.totalPrice}}</td>

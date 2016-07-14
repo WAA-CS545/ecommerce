@@ -37,7 +37,6 @@ public class Order {
 	 * @param orderId
 	 */
 	public Order(String orderId) {
-		this();
 		this.orderId = orderId;
 	}
 
