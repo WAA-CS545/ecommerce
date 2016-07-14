@@ -1,5 +1,5 @@
  <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<div class="header-top">
 		<div class="container">
 			<div class="social">
@@ -36,9 +36,9 @@
 						<h3> 
 						<div class="total">
 							<span class="simpleCart_total"></span> </div>
-							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/></h3>
+							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/>USD${orderTotalPrice}</h3>
 						</a>
-						<p><a href='<c:url value = "/order"' class="simpleCart_empty">Empty Cart</a></p>
+						<p><a href='<c:url value = "/order"' class="simpleCart_empty"></a></p>
 
 					</div>
 				</div>
@@ -66,9 +66,7 @@
 										</c:forEach>
 									</ul>	
 								</div>							
-							</div>
-							
-						
+							</div>					
 						  </div>
 						</div>
 					</li>

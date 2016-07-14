@@ -5,16 +5,20 @@
  */
 package com.cs545.ecommerce.controller;
 
+import java.math.BigDecimal;
+
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.cs545.ecommerce.domain.Order;
 import com.cs545.ecommerce.domain.OrderItem;
@@ -30,6 +34,7 @@ import com.cs545.ecommerce.service.ProductService;
 
 @Controller
 @RequestMapping(value = "rest/order")
+@SessionAttributes("orderTotalPrice")
 public class OrderRestController {
 
     @Autowired
@@ -46,8 +51,10 @@ public class OrderRestController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public @ResponseBody
-    Order create(@RequestBody Order order) {
-        return orderService.create(order);
+    Order create(@RequestBody Order order, Model model) {
+    	Order ordRet = orderService.create(order);
+    	model.addAttribute("orderTotalPrice", ordRet.getOrderPrice());
+        return ordRet;
     }
 
     /**
@@ -69,8 +76,10 @@ public class OrderRestController {
     @RequestMapping(value = "/{orderId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void update(@PathVariable(value = "orderId") String orderId,
-            @RequestBody Order order) {
+            @RequestBody Order order, Model model) {
     	orderService.update(orderId, order);
+    	Order ord = orderService.read(orderId);
+    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
     }
 
     /**
@@ -79,8 +88,9 @@ public class OrderRestController {
      */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.DELETE)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable(value = "orderId") String orderId) {
+    public void delete(@PathVariable(value = "orderId") String orderId, Model model) {
     	orderService.delete(orderId);
+    	model.addAttribute("orderTotalPrice", BigDecimal.valueOf(0));
     }
 
     /**
@@ -90,7 +100,7 @@ public class OrderRestController {
      */
     @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addIItem(@PathVariable String productId, HttpServletRequest request) {
+    public void addIItem(@PathVariable String productId, HttpServletRequest request, Model model) {
         String sessionId = request.getSession(true).getId();
         Order order = orderService.read(sessionId);
         if (order == null) {
@@ -104,6 +114,9 @@ public class OrderRestController {
 
         order.addOrderItem(new OrderItem(product));
         orderService.update(sessionId, order);
+        Order ord = orderService.read(sessionId);
+    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
+        
     }
 
     /**
@@ -114,7 +127,7 @@ public class OrderRestController {
      */
     @RequestMapping(value = "/remove/{productId}", method = RequestMethod.PUT)
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void removeItem(@PathVariable String productId, HttpServletRequest request) {
+    public void removeItem(@PathVariable String productId, HttpServletRequest request, Model model) {
         String sessionId = request.getSession(true).getId();
         Order order = orderService.read(sessionId);
 
@@ -129,5 +142,7 @@ public class OrderRestController {
 
         order.removeOrderItem(new OrderItem(product));
         orderService.update(sessionId, order);
+        Order ord = orderService.read(sessionId);
+    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
     }
 }
