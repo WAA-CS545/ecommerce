@@ -13,10 +13,8 @@
 			<div class="contact-form">
 				
 				<div class="col-md-8 contact-grid">
-				<div class="alert alert-danger">
-  <strong>Danger!</strong> You didn't fill any thing
-</div>
-					<form>	
+				
+					<form method="post">	
 						<input type="text" value="Name" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Name';}">
 					
 						<input type="text" value="Email" onfocus="this.value='';" onblur="if (this.value == '') {this.value ='Email';}">
