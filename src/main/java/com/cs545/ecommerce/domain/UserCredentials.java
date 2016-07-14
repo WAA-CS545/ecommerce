@@ -18,23 +18,32 @@ import javax.validation.constraints.Size;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+@Entity(name = "CREDENTIALS")
 public class UserCredentials {
 
+	@Id
+	@Column(nullable = false, unique = true)
 	@Size(min = 4, max = 8)
 	String username;
 
+	@Column(nullable = false,length=256,name="password")
 	String realPassword;
 	
+	@Transient
 	@Size(min = 8, max = 14)
 	String password;
 	
+	@Transient
 	@NotNull(message="not match")
 	String verifyPassword;
 	
 	Boolean enabled;
 
+	@OneToOne(mappedBy = "userCredentials", cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private User user;
 
+	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "credentials_id")
 	List<Authority> authority = new ArrayList<Authority>();
 
 	public String getUsername() {

@@ -13,6 +13,17 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import java.io.Serializable;
 
+/**
+ * The address of a User.
+ *
+ * An instance of this class is always associated with only one <tt>User</tt>
+ * and depends on that parent objects lifecycle, it is a component. Of course,
+ * other entity classes can also embed addresses.
+ *
+ * @see User
+ * @author Christian Bauer
+ */
+@Entity
 public class Address implements Serializable {
 
 	/**
@@ -20,18 +31,23 @@ public class Address implements Serializable {
 	 */
 	private static final long serialVersionUID = 8499189190508273701L;
 
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id = null;
 
 	@NotEmpty
+	@Column(length = 255, nullable = false)
 	private String street;
 
 	@NotEmpty
+	@Column(length = 16, nullable = false)
 	private String zipcode;
 	
 	@NotEmpty
+	@Column(length = 255, nullable = false)
 	private String city;
 
+	@OneToOne(fetch = FetchType.EAGER, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	private User user;
 
 	/**

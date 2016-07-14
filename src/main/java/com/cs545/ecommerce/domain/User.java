@@ -20,6 +20,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
+@Table(name = "USERS")
 public class User implements Serializable {
 
 	/**
@@ -27,23 +28,41 @@ public class User implements Serializable {
 	 */
 	private static final long serialVersionUID = 3855561356507854561L;
 
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "USER_ID")
 	private Long id = null;
 
+	@Version
+	private int version = 0;
 
+	@Column(name = "FIRSTNAME", nullable = false)
 	@NotEmpty
 	private String firstName;
 
+	@Column(name = "LASTNAME", nullable = false)
 	@NotEmpty
 	private String lastName;
 
+	@Column(name = "EMAIL", nullable = false)
 	@NotEmpty
 	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
 	private String email;
 
+	@Column(name = "RANK", nullable = false)
+	private int ranking = 0;
+
+	@Column(name = "IS_ADMIN", nullable = false)
+	private boolean admin = false;
+
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinColumn(name = "userId")
+	@Embedded
 	@Valid
 	private UserCredentials userCredentials;
 
+	@OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST, mappedBy = "user")
+	@Embedded
 	@Valid
 	private Address address = new Address();
 	
@@ -79,6 +98,22 @@ public class User implements Serializable {
 		this.email = email;
 	}
 
+	public int getRanking() {
+		return ranking;
+	}
+
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+
 	public UserCredentials getUserCredentials() {
 		return userCredentials;
 	}
@@ -95,4 +130,16 @@ public class User implements Serializable {
 	public void setAddress(Address address) {
 		this.address = address;
 	}
+
+//	public Set<Item> getBoughtItems() {
+//		return boughtItems;
+//	}
+//
+//	public void setBoughtItems(Set<Item> boughtItems) {
+//		this.boughtItems = boughtItems;
+//	}
+//
+//	public void addBoughtItem(Item boughtItem) {
+//		this.boughtItems.add(boughtItem);
+//	}
 }
