@@ -37,8 +37,9 @@ public class OrderController {
      * 
      */
     @RequestMapping
-    public String get(HttpServletRequest request){
-        return "redirect:/order/"+request.getSession(true).getId();
+    public String get(HttpServletRequest request, Model model){
+    	model.addAttribute("pageToRender", "redirect:/order/"+request.getSession(true).getId());
+        return "redirect:/UI/template";
     }
     
     /**
@@ -50,9 +51,9 @@ public class OrderController {
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public String getCart(@PathVariable(value = "orderId") String orderId, Model model){
         model.addAttribute("orderId", orderId);
-        List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
-        return "order";
+//        List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+//		model.addAttribute("Matricescategories", Matricescategories);
+        model.addAttribute("pageToRender", "order");		
+        return "redirect:/UI/template";
     }
 }

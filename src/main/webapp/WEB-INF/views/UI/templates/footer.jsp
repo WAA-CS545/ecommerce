@@ -8,7 +8,7 @@
 				<ul class="nav-bottom">
 						<li><a href="<spring:url value='/howToOrder' />">How to order</a></li>
 						<li><a href="<spring:url value='/faq' />">FAQ</a></li>
-						<li><a href="<spring:url value='/location' /> ">Location</a></li>
+						<li><a href="<spring:url value='/ContactUs' /> ">Location</a></li>
 						<li><a href="<spring:url value='/shipping' /> ">Shipping</a></li>
 						<li><a href="<spring:url value='/membership' />">Membership</a></li>	
 					</ul>	
@@ -17,7 +17,7 @@
 					<h4>CATEGORIES</h4>
 					<ul class="nav-bottom">
 					<c:forEach items="${categories}" var="category" begin="0" end="4">
-						<li><a href="<c:url value='/category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
+						<li><a href="<c:url value='/Category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
 						</c:forEach>
 					 </ul>
 					
