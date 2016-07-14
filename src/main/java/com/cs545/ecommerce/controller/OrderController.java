@@ -26,7 +26,6 @@ import com.cs545.ecommerce.service.CategoryService;
  */
 @Controller
 @RequestMapping(value = "/order")
-@SessionAttributes("pageToRender")
 public class OrderController {
     @Autowired
     private CategoryService catservice;
@@ -50,11 +49,10 @@ public class OrderController {
      * Return order page for GET requests having session ids (serving also as orderId)
      */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public String getCart(@PathVariable(value = "orderId") String orderId, HttpServletRequest request){
-        request.getSession().setAttribute("orderId", orderId);
+    public String getCart(@PathVariable(value = "orderId") String orderId, Model model){
+       model.addAttribute("orderId", orderId);
 //        List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-//		model.addAttribute("Matricescategories", Matricescategories);
-        request.getSession().setAttribute("pageToRender", "order");		
-        return "redirect:/UI/template";
+//		model.addAttribute("Matricescategories", Matricescategories);        		
+        return "UI/jsp/order";
     }
 }
