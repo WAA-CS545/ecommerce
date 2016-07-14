@@ -6,7 +6,7 @@
 				<ul>
 					<li><a href="http://facbook.com"><i class="facebok"> </i></a></li>
 					<li><a href="http://twiter.com"><i class="twiter"> </i></a></li>
-					<li><a href="http://inst.com"><i class="inst"> </i></a></li>
+					<li><a href="http://instragram.com"><i class="inst"> </i></a></li>
 					<li><a href="http://google.com"><i class="goog"> </i></a></li>
 						<div class="clearfix"></div>	
 				</ul>
@@ -61,7 +61,7 @@
 							<div class="col1">
 								<div class="h_nav">
 									<ul>
-									<c:forEach items="${categories}" var="category">
+									<c:forEach items="${Matricescategories}" var="category">
 										<li><a href="<spring:url value="/Category/${category.getCategoryName()}"/>">${category.getCategoryName()}</a></li>
 										</c:forEach>
 									</ul>	
@@ -73,23 +73,7 @@
 						</div>
 					</li>
 				    <li class="grid"><a class="color2" href="<spring:url value='/Electronics' />">Electronics</a>
-					  	<div class="mepanel">
-						<div class="row">
-							<div class="col1">
-								<div class="h_nav">
-									<ul>
-									<c:forEach items="${categories}" var="category">
-										<li><a href="<spring:url value='/Category/${category.getCategoryName()}' />" > ${category.getCategoryName()}  </a></li>
-									</c:forEach>
-										
-										
-									</ul>	
-								</div>								
-							</div>
-							
-						
-						  </div>
-						</div>
+					  	
 			    </li>
 			    <c:choose>
 					    <c:when test="${empty user}">

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.impl.InMemoryCategoryRepository;
+import com.cs545.ecommerce.service.CategoryService;
 import com.cs545.ecommerce.service.ProductService;
 
 @Controller
@@ -17,14 +18,16 @@ public class HomeController {
 	@Autowired
 	private ProductService pService;
 	@Autowired
-	private InMemoryCategoryRepository rep;
+	private CategoryService catService;
 
 	@RequestMapping({ "/", "/home" })
 	public String welcome(Model model) {
 
-		List<Category> categories = rep.getAllCategories();
+		List<Category> categories = catService.getCategoriesByMainCategory("Matrices");
 		List<Product> homeProducts = pService.getAllProducts();
-
+		List<Category> Matricescategories = catService.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("categories", categories);
 
 		model.addAttribute("homeProducts", homeProducts);

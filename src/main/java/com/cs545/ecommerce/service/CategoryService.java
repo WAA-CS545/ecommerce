@@ -5,5 +5,7 @@ import java.util.List;
 import com.cs545.ecommerce.domain.Category;
 
 public interface CategoryService {
-List<Category> getAllCategories();
+	List<Category> getAllCategories();
+
+	List<Category> getCategoriesByMainCategory(String mainCategory);
 }

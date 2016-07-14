@@ -23,8 +23,10 @@ public class CategoryController {
 
 	@RequestMapping(value = "/Clothes")
 	public String getClothes(Model model) {
-		List<Product> products = productService.getAllProducts();
+		List<Product> products = productService.getProductsByMainCat("Clothes");
 		List<Category> categories = catservice.getAllCategories();
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
 		model.addAttribute("categoryName", "Clothes Category");
@@ -34,8 +36,11 @@ public class CategoryController {
 
 	@RequestMapping(value = "/Mattrices")
 	public String getMattrices(Model model) {
-		List<Product> products = productService.getAllProducts();
+		List<Product> products = productService.getProductsByMainCat("Mattrices");
 		List<Category> categories = catservice.getAllCategories();
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
 		model.addAttribute("categoryName", "Mattrices Category");
@@ -45,8 +50,11 @@ public class CategoryController {
 
 	@RequestMapping(value = "/Electronics")
 	public String getElectronics(Model model) {
-		List<Product> products = productService.getAllProducts();
+		List<Product> products = productService.getProductsByMainCat("Electronics");
 		List<Category> categories = catservice.getAllCategories();
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
 		model.addAttribute("categoryName", "Electronics Category");
@@ -62,7 +70,9 @@ public class CategoryController {
 
 		List<Category> categories = catservice.getAllCategories();
 		model.addAttribute("categories", categories);
-
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("categoryName", "Electronics Category");
 		model.addAttribute("pageToRender", "jsp/Category.jsp");
 		return "UI/template";

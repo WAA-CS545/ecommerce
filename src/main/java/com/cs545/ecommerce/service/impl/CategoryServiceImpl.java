@@ -17,5 +17,10 @@ private CategoryRepository repository;
 	public List<Category> getAllCategories() {
 		return repository.getAllCategories();
 	}
+	@Override
+	public List<Category> getCategoriesByMainCategory(String mainCategory) {
+		return repository.getCategoriesByMainCategory(mainCategory);
+	}
+	
 
 }
