@@ -35,8 +35,7 @@ private InMemoryCategoryRepository catRep;
 
         Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
         tribica.setDescription("Tribica living");
-        tribica.setCategory(new Category("Matrices", "Tribica"));
-
+        tribica.setCategory(catRep.getCategoryByName("Tribica"));
         tribica.setManufacturer("American Matrices");
         tribica.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -48,8 +47,7 @@ private InMemoryCategoryRepository catRep;
         
         Product clarica = new Product("P1235", "Clarica", BigDecimal.valueOf(499));
         clarica.setDescription("Clarica");
-        clarica.setCategory(new Category("Matrices", "Clarica"));
-
+        clarica.setCategory(catRep.getCategoryByName("Clarica"));
         clarica.setManufacturer("American Matrices");
         clarica.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -61,8 +59,7 @@ private InMemoryCategoryRepository catRep;
         
         Product colormate = new Product("P1236", "Colormate", BigDecimal.valueOf(499));
         colormate.setDescription("Colormate");
-        colormate.setCategory(new Category("Matrices", "Colormate"));
-
+        colormate.setCategory(catRep.getCategoryByName("Colormate"));
         colormate.setManufacturer("American Matrices");
         colormate.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -74,8 +71,7 @@ private InMemoryCategoryRepository catRep;
         
         Product herlequin = new Product("P1237", "Herlequin", BigDecimal.valueOf(499));
         herlequin.setDescription("herlequin");
-        herlequin.setCategory(new Category("Matrices", "Herlequin"));
-
+        herlequin.setCategory(catRep.getCategoryByName("Herlequin"));
         herlequin.setManufacturer("American Matrices");
         herlequin.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -87,8 +83,7 @@ private InMemoryCategoryRepository catRep;
         
         Product littlehome = new Product("P1238", "Little Home", BigDecimal.valueOf(499));
         littlehome.setDescription("littlehome");
-        littlehome.setCategory(new Category("Matrices", "Littlehome"));
-
+        littlehome.setCategory(catRep.getCategoryByName("Littlehome"));
         littlehome.setManufacturer("American Matrices");
         littlehome.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -100,9 +95,7 @@ private InMemoryCategoryRepository catRep;
         
         Product clarissa = new Product("P1240", "Clarissa", BigDecimal.valueOf(499));
         clarissa.setDescription("clarissa");
-        clarissa.setCategory(new Category("Matrices", "Clarissa"));
-
-       
+        clarissa.setCategory(catRep.getCategoryByName("Clarissa"));
         clarissa.setManufacturer("American Matrices");
         clarissa.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -114,9 +107,7 @@ private InMemoryCategoryRepository catRep;
         
         Product essential = new Product("P1241", "Essential", BigDecimal.valueOf(499));
         essential.setDescription("Essential");
-        essential.setCategory(new Category("Matrices", "Essential"));
-
-       
+        essential.setCategory(catRep.getCategoryByName("Essential"));
         essential.setManufacturer("American Matrices");
         essential.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -128,8 +119,7 @@ private InMemoryCategoryRepository catRep;
         
         Product tribecalliving = new Product("P1242", "Tribecal Living", BigDecimal.valueOf(499));
         tribecalliving.setDescription("tribecalliving");
-        tribecalliving.setCategory(new Category("Matrices", "Tribecalliving"));
-
+        tribecalliving.setCategory(catRep.getCategoryByName("Tribecalliving"));
         tribecalliving.setManufacturer("American Matrices");
         tribecalliving.setUnitsInStock(100);
         images = new ArrayList<Image>();
@@ -147,7 +137,7 @@ private InMemoryCategoryRepository catRep;
         nexus7.setManufacturer("Asus");
         nexus7.setUnitsInStock(500);
         images = new ArrayList<Image>();
-        images.add(new Image("Nexus 7", "P1235.jpg"));
+        images.add(new Image("Nexus 7", "nexus7.jpg"));
         nexus7.setImages(images);
 
 
