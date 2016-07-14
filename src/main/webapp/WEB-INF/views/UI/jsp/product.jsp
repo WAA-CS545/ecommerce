@@ -50,7 +50,7 @@ $(window).load(function() {
 	
 	
 					</div>	
-					<div class="col-md-5 single-top-in simpleCart_shelfItem">
+					<div class="col-md-5 single-top-in simpleCart_shelfItem" ng-app="cartApp" ng-controller="cartCtrl">
 						<div class="single-para ">
 						<h4>${product.getProductName()}</h4>
 							<div class="star-on">
@@ -84,7 +84,7 @@ $(window).load(function() {
 							</ul>
 						</div>
 							
-								<a href="#" class="add-cart item_add">ADD TO CART</a>
+								<a href="#" class="add-cart item_add" ngclick="addToCart('${product.productId}')">ADD TO CART</a>
 							
 						</div>
 					</div>
@@ -92,7 +92,7 @@ $(window).load(function() {
 				</div>
 			<!---->
 
-		<div class=" bottom-product">
+		<div class=" bottom-product" >
 					<c:forEach  begin="0" end="2" items="${subProducts}" var="pr">
 					<div class="col-md-4 bottom-cd simpleCart_shelfItem">
 						<div class="product-at ">

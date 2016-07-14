@@ -1,5 +1,7 @@
 package com.cs545.ecommerce.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -16,8 +18,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.User;
 import com.cs545.ecommerce.domain.UserCredentials;
+import com.cs545.ecommerce.service.CategoryService;
 import com.cs545.ecommerce.service.UserCredentialsService;
 
 @Controller
@@ -26,9 +30,13 @@ public class LoginController {
 
 	@Autowired
 	UserCredentialsService credentialsService;
-	
+	@Autowired
+	private CategoryService catservice;;
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(Model model) {
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("pageToRender", "jsp/UserLogin.jsp");
  		return "UI/template";
 	}
@@ -36,6 +44,9 @@ public class LoginController {
 	
 	@RequestMapping(value="/postLogin", method = RequestMethod.GET)
 	public String PostLogin(Model model) {
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)){    
         	model.addAttribute("user", getPrincipal());
@@ -46,7 +57,9 @@ public class LoginController {
  
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(Model model) {
- 
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
+		model.addAttribute("Matricescategories", Matricescategories);
+		
 		model.addAttribute("error", "true");
 		return "login";
  
@@ -59,6 +72,7 @@ public class LoginController {
         if (auth != null){    
             new SecurityContextLogoutHandler().logout(request, response, auth);
         }
+       
  		return "redirect:/home";
  	}
 	

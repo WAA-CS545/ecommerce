@@ -121,6 +121,15 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		return false;
 	}
 
+	@Override
+	public List<Category> getCategoriesByMainCategory(String mainCategory) {
+		List<Category> cats=new ArrayList<>();
+		for(Category c:categories){
+			if(c.getSubCategoryOf().equals(mainCategory)) cats.add(c);
+		}
+		return cats;
+	}
+
 	
 
 }

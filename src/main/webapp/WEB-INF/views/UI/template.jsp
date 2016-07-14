@@ -10,6 +10,7 @@
 <link href='<spring:url value="/resource/css/bootstrap.css" htmlEscape="true"/>' rel='stylesheet' type='text/css'/>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<spring:url value='/resource/js/jquery.min.js' /> "></script>
+<script src = "/com.cs545.ecommerce/resources/js/controllers.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
 <link href='<spring:url value="/resource/css/style.css" htmlEscape="true" />' rel='stylesheet' type='text/css' />
