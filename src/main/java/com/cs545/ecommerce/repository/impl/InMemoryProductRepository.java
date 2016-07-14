@@ -23,13 +23,14 @@ import com.cs545.ecommerce.repository.ProductRepository;
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
-private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
+private InMemoryCategoryRepository catRep;
 
     private final List<Product> listOfProduct;
     private List<Image> images;
 
     public InMemoryProductRepository() {
         listOfProduct = new ArrayList<Product>();
+        catRep = new InMemoryCategoryRepository();
 
         Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
         tribica.setDescription("Tribica living");
