@@ -18,8 +18,8 @@
 			    <li>
 					
 						<div class="banner-text">
-							<h3>Lorem Ipsum is   </h3>
-						<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+							<h3>customizable   </h3>
+						<p>Our website is fully customizable store design.</p>
 						
 						</div>
 				
@@ -27,8 +27,8 @@
 				<li>
 					
 						<div class="banner-text">
-							<h3>There are many  </h3>
-						<p>Popular belief Contrary to , Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.</p>
+							<h3>Full functunality </h3>
+						<p>To see the full functunality you have to pay to group 3 400 $</p>
 												
 
 						</div>
@@ -36,8 +36,8 @@
 				</li>
 				<li>
 						<div class="banner-text">
-							<h3>Sed ut perspiciatis</h3>
-						<p>Lorem Ipsum is not simply random text. Contrary to popular belief, It has roots in a piece of classical Latin literature from 45 BC.</p>
+							<h3>Sell online</h3>
+						<p>Everything you need to sell online. Trusted by over 275,000 businesses worldwide..</p>
 								
 
 						</div>
