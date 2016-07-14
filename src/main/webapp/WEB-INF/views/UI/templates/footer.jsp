@@ -1,4 +1,5 @@
  <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 				<div class="container">
 			<div class="footer-top-at">
 			
@@ -15,7 +16,7 @@
 				<div class="col-md-3 amet-sed">
 					<h4>CATEGORIES</h4>
 					<ul class="nav-bottom">
-					<c:forEach items="${categories}" var="category">
+					<c:forEach items="${categories}" var="category" begin="0" end="4">
 						<li><a href="<c:url value='/category/${category.getCategoryName()}' />"> ${category.getCategoryName()} </a></li>
 						</c:forEach>
 					 </ul>
