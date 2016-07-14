@@ -63,15 +63,21 @@ public class ProductServiceImpl implements ProductService{
     	return productRepository.searchProduct(category, searchInput);
     }
 
+	/* (non-Javadoc)
+	 * @see com.cs545.ecommerce.service.ProductService#searchProduct(java.lang.String)
+	 */
 	@Override
 	public List<Product> searchProduct(String searchInput) {
 		return productRepository.searchProduct(searchInput);
 	}
 
+	
+	/* (non-Javadoc)
+	 * @see com.cs545.ecommerce.service.ProductService#getProductsByMainCat(java.lang.String)
+	 */
 	@Override
-	public List<Product> getProductsByMainCat(String name) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Product> getProductsByMainCat(String mainCatName) {
+		return productRepository.getProductsByMainCat(mainCatName);
 	}
-    
+	
 }

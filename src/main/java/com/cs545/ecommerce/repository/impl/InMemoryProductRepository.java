@@ -272,4 +272,17 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
 	public List<Product> searchProduct(String searchInput) {
 		return this.listOfProduct.stream().filter(p->p.getProductName().toLowerCase().contains(searchInput.toLowerCase())).collect(Collectors.toList());
 	}
+	/* (non-Javadoc)
+	 * @see com.cs545.ecommerce.repository.ProductRepository#getProductsByMainCat(java.lang.String)
+	 */
+	public List<Product> getProductsByMainCat(String mainCatName){
+		List<Product> matchingProducts = new ArrayList<Product>();
+		for(Product product : listOfProduct){
+			if(product.getCategory().getSubCategoryOf().equals(mainCatName)){
+				matchingProducts.add(product);
+			}						
+		}
+		return matchingProducts;
+		
+	}
 }
