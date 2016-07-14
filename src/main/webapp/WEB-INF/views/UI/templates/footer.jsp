@@ -8,7 +8,7 @@
 				<ul class="nav-bottom">
 						<li><a href="<spring:url value='/howToOrder' />">How to order</a></li>
 						<li><a href="<spring:url value='/faq' />">FAQ</a></li>
-						<li><a href="<spring:url value='/location' /> ">Location</a></li>
+						<li><a href="<spring:url value='/ContactUs' /> ">Location</a></li>
 						<li><a href="<spring:url value='/shipping' /> ">Shipping</a></li>
 						<li><a href="<spring:url value='/membership' />">Membership</a></li>	
 					</ul>	
