@@ -23,13 +23,14 @@ import com.cs545.ecommerce.repository.ProductRepository;
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
-private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
+private InMemoryCategoryRepository catRep;
 
     private final List<Product> listOfProduct;
     private List<Image> images;
 
     public InMemoryProductRepository() {
         listOfProduct = new ArrayList<Product>();
+        catRep = new InMemoryCategoryRepository();
 
         Product tribica = new Product("P1234", "Tribica living", BigDecimal.valueOf(499));
         tribica.setDescription("Tribica living");
@@ -163,7 +164,7 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
         mensweater.setManufacturer("Geogio Armani");
         mensweater.setUnitsInStock(15);
         images = new ArrayList<Image>();
-        images.add(new Image("Men's Sweater", "P1290.jpg"));
+        images.add(new Image("Men's Sweater", "sweater.jpg"));
         mensweater.setImages(images);
         
         Product hoodie = new Product("P1298", "Men hoodie", BigDecimal.valueOf(10));
@@ -172,7 +173,7 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
         hoodie.setManufacturer("Geogio Armani");
         hoodie.setUnitsInStock(15);
         images = new ArrayList<Image>();
-        images.add(new Image("Men hoodie", "P1298.jpg"));
+        images.add(new Image("Men hoodie", "Hoodie.jpg"));
         hoodie.setImages(images);
         
         Product ladiesdress = new Product("P1299", "Ladies dress", BigDecimal.valueOf(30));
@@ -181,7 +182,7 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
         ladiesdress.setManufacturer("Takobel");
         ladiesdress.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Ladies dress", "P1299.jpg"));
+        images.add(new Image("Ladies dress", "femaledress.jpg"));
         ladiesdress.setImages(images);
         
         Product mensshoe = new Product("P1288", "Men shoe", BigDecimal.valueOf(80));
@@ -190,7 +191,7 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
         mensshoe.setManufacturer("Clarks");
         mensshoe.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Men shoe", "P1288.jpg"));
+        images.add(new Image("Men shoe", "mens-shoe.jpg"));
         mensshoe.setImages(images);
         
         Product womenshoe = new Product("P1277", "Women shoe", BigDecimal.valueOf(80));
@@ -199,7 +200,7 @@ private InMemoryCategoryRepository catRep=new InMemoryCategoryRepository();
         womenshoe.setManufacturer("Clarks");
         womenshoe.setUnitsInStock(5);
         images = new ArrayList<Image>();
-        images.add(new Image("Women shoe", "P1277.jpg"));
+        images.add(new Image("Women shoe", "womenshoe1.jpg"));
         womenshoe.setImages(images);
 
         listOfProduct.add(tribica);

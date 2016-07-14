@@ -21,10 +21,7 @@ public class UserCredentialsServiceImpl implements com.cs545.ecommerce.service.U
 
 	public void save(UserCredentials userCredentials) {
 		Authority auth = new Authority();
-		if(userCredentials.getUser().isAdmin())
-			auth.setAuthority("ROLE_ADMIN");
-		else
-			auth.setAuthority("ROLE_USER");
+		auth.setAuthority("ROLE_USER");
 		auth.setUsername(userCredentials.getUsername());
 		userCredentials.addAuthority(auth);
 		try{
