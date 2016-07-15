@@ -29,6 +29,7 @@ public class Order {
 		super();
 		orderItems = new HashMap<String, OrderItem>();
 		orderPrice = new BigDecimal(0);
+		orderDate = LocalDate.now();
 	}
 	
 	
@@ -37,6 +38,7 @@ public class Order {
 	 * @param orderId
 	 */
 	public Order(String orderId) {
+		this();
 		this.orderId = orderId;
 	}
 

@@ -26,7 +26,7 @@ cartApp.controller('cartCtrl', function($scope, $http){
     };
     
     $scope.removeFromCart = function(productId){
-        $http.put('/ecommerce/rest/order/'+productId)
+        $http.put('/ecommerce/rest/order/remove/'+productId)
                 .success(function (){
                     $scope.refreshCart();
         });

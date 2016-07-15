@@ -49,7 +49,7 @@ public class OrderController {
      * Return order page for GET requests having session ids (serving also as orderId)
      */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
-    public String getCart(@PathVariable(value = "orderId") String orderId, Model model){
+    public String getOrder(@PathVariable(value = "orderId") String orderId, Model model){
        model.addAttribute("orderId", orderId);
 //        List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
 //		model.addAttribute("Matricescategories", Matricescategories);        		

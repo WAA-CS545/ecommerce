@@ -1,6 +1,7 @@
 package com.cs545.ecommerce.domain;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Product {
@@ -15,6 +16,7 @@ public class Product {
 	
 	public Product() {
 		super();
+		images = new ArrayList<>();
 	}
 	public Product(String productId, String name, BigDecimal unitPrice) {
         this.productId = productId;

@@ -34,7 +34,7 @@ import com.cs545.ecommerce.service.ProductService;
 
 @Controller
 @RequestMapping(value = "rest/order")
-//@SessionAttributes("orderTotalPrice")
+@SessionAttributes("orderTotalPrice")
 public class OrderRestController {
 
     @Autowired
@@ -53,7 +53,7 @@ public class OrderRestController {
     public @ResponseBody
     Order create(@RequestBody Order order, Model model) {
     	Order ordRet = orderService.create(order);
-    	//model.addAttribute("orderTotalPrice", ordRet.getOrderPrice());
+    	model.addAttribute("orderTotalPrice", ordRet.getOrderPrice());
         return ordRet;
     }
 
@@ -115,7 +115,7 @@ public class OrderRestController {
         order.addOrderItem(new OrderItem(product));
         orderService.update(sessionId, order);
         Order ord = orderService.read(sessionId);
-    	//model.addAttribute("orderTotalPrice", ord.getOrderPrice());
+    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
         
     }
 

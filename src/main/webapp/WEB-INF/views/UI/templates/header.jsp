@@ -35,8 +35,8 @@
 						<a href='<c:url value="/order"></c:url>'>
 						<h3> 
 						<div class="total">
-							<span class="simpleCart_total"></span> </div>
-							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/>${orderTotalPrice}</h3>
+							<span class="simpleCart_total">$${orderTotalPrice}</span> </div>
+							<img src="<spring:url value='/resource/images/ConstantImages/cart.png' />" alt=""/></h3>
 						</a>
 						<p><a href='<c:url value = "/order"></c:url>' class="simpleCart_empty"></a></p>
 
