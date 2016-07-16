@@ -24,58 +24,51 @@ public class CategoryController {
 	@RequestMapping(value = "/Clothes")
 	public String getClothes(Model model) {
 		List<Product> products = productService.getProductsByMainCat("Clothes");
-		List<Category> categories = catservice.getAllCategories();
-		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
-		model.addAttribute("categoryName", "Clothes Category");
-		model.addAttribute("pageToRender", "jsp/Category.jsp");
-		return "UI/template";
+		String categoryName = "Clothes Category";
+		return getPage(categoryName, products, model);
+	}
+	
+	@RequestMapping(value = "/Shoes")
+	public String getShoes(Model model) {
+		List<Product> products = productService.getProductsByMainCat("Shoes");		
+		String categoryName = "Shoes Category";
+		return getPage(categoryName, products, model);
 	}
 
-	@RequestMapping(value = "/Mattrices")
+	@RequestMapping(value = "/Mattresses")
 	public String getMattrices(Model model) {
 		List<Product> products = productService.getProductsByMainCat("Matrices");
-		List<Category> categories = catservice.getAllCategories();
-		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
-		model.addAttribute("categories", categories);
-		model.addAttribute("products", products);
-		model.addAttribute("categoryName", "Mattrices Category");
-		model.addAttribute("pageToRender", "jsp/Category.jsp");
-		return "UI/template";
+		String categoryName = "Mattresses Category";
+		return getPage(categoryName, products, model);
 	}
 
 	@RequestMapping(value = "/Electronics")
 	public String getElectronics(Model model) {
 		List<Product> products = productService.getProductsByMainCat("Electronics");
-		List<Category> categories = catservice.getAllCategories();
-		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
-		model.addAttribute("categories", categories);
 		model.addAttribute("products", products);
-		model.addAttribute("categoryName", "Electronics Category");
-		model.addAttribute("pageToRender", "jsp/Category.jsp");
-		return "UI/template";
+		String categoryName = "Electronics Category";
+		return getPage(categoryName, products, model);
 	}
 
 	@RequestMapping(value = "/Category/{categoryName}", method = RequestMethod.GET)
 	public String getCategoryByName(@PathVariable("categoryName") String caregoryName, Model model) {
-
 		if (productService.getProductsByCategoryName(caregoryName) != null)
 		model.addAttribute("products", productService.getProductsByCategoryName(caregoryName));
-
 		List<Category> categories = catservice.getAllCategories();
 		model.addAttribute("categories", categories);
 		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
+		model.addAttribute("Matricescategories", Matricescategories);		
 		model.addAttribute("categoryName", "Electronics Category");
 		model.addAttribute("pageToRender", "jsp/Category.jsp");
 		return "UI/template";
+	}
+	
+	public String getPage(String categoryName, List<Product> products, Model model){
+		model.addAttribute("products", products);
+		model.addAttribute("categoryName", categoryName);
+		model.addAttribute("pageToRender", "jsp/Category.jsp");
+		return "UI/template";		
 	}
 
 }

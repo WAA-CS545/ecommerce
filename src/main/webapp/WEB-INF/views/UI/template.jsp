@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-      <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+   <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,6 +11,7 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="<spring:url value='/resource/js/jquery.min.js' /> "></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
 <script src = "/ecommerce/resource/js/controllers.js"></script>
 <!-- Custom Theme files -->
 <!--theme-style-->
@@ -30,7 +31,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
 <%-- <script src="<spring:url value='/resource/js/simpleCart.min.js' /> " > </script> --%>
 </head>
-<body>
+<body ng-app="cartApp" ng-controller="cartCtrl" ng-init="initCartId('${sessionId}')">
 <div class="header">
 <jsp:include page="templates/header.jsp"/>
 </div>

@@ -30,9 +30,7 @@ public class Order {
 		orderItems = new HashMap<String, OrderItem>();
 		orderPrice = new BigDecimal(0);
 		orderDate = LocalDate.now();
-	}
-	
-	
+	}	
 
 	/**
 	 * @param orderId
@@ -41,8 +39,6 @@ public class Order {
 		this();
 		this.orderId = orderId;
 	}
-
-
 
 	/**
 	 * @return the orderId
@@ -112,8 +108,7 @@ public class Order {
 	 */
 	public void setOrderItems(Map<String, OrderItem> orderItems) {
 		this.orderItems = orderItems;
-	}
-	
+	}	
 		
 	/**
 	 * @param item -- order item to add to map of order items

@@ -34,7 +34,7 @@ import com.cs545.ecommerce.service.ProductService;
 
 @Controller
 @RequestMapping(value = "rest/order")
-@SessionAttributes("orderTotalPrice")
+@SessionAttributes("orderPrice")
 public class OrderRestController {
 
     @Autowired
@@ -42,7 +42,7 @@ public class OrderRestController {
 
     @Autowired
     private ProductService productService;
-
+    
     /**
      * @param order
      * @return
@@ -53,9 +53,10 @@ public class OrderRestController {
     public @ResponseBody
     Order create(@RequestBody Order order, Model model) {
     	Order ordRet = orderService.create(order);
-    	model.addAttribute("orderTotalPrice", ordRet.getOrderPrice());
+    	model.addAttribute("orderPrice", ordRet.getOrderPrice());
         return ordRet;
-    }
+    }    
+    
 
     /**
      * @param orderId
@@ -64,8 +65,13 @@ public class OrderRestController {
      */
     @RequestMapping(value = "/{orderId}", method = RequestMethod.GET)
     public @ResponseBody
-    Order read(@PathVariable(value = "orderId") String orderId) {
-        return orderService.read(orderId);
+    Order read(@PathVariable(value = "orderId") String orderId, Model model) {
+    	Order ord = orderService.read(orderId);
+    	if(ord == null){
+    		ord = new Order();
+    	}
+    	model.addAttribute("orderPrice", ord.getOrderPrice());
+        return ord;
     }
 
     /**
@@ -79,7 +85,7 @@ public class OrderRestController {
             @RequestBody Order order, Model model) {
     	orderService.update(orderId, order);
     	Order ord = orderService.read(orderId);
-    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
+    	model.addAttribute("orderPrice", ord.getOrderPrice());
     }
 
     /**
@@ -90,7 +96,7 @@ public class OrderRestController {
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     public void delete(@PathVariable(value = "orderId") String orderId, Model model) {
     	orderService.delete(orderId);
-    	model.addAttribute("orderTotalPrice", BigDecimal.valueOf(0));
+    	model.addAttribute("orderPrice", BigDecimal.valueOf(0));
     }
 
     /**
@@ -98,9 +104,9 @@ public class OrderRestController {
      * @param request
      * Add order item to an existing order, considered as updating the order.
      */
-    @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public void addItem(@PathVariable String productId, HttpServletRequest request, Model model) {
+    @RequestMapping(value = "/add/{productId}", method = RequestMethod.PUT)    
+    public @ResponseBody 
+    Order addItem(@PathVariable String productId, HttpServletRequest request, Model model) {
         String sessionId = request.getSession(true).getId();
         Order order = orderService.read(sessionId);
         if (order == null) {
@@ -113,9 +119,9 @@ public class OrderRestController {
         }
 
         order.addOrderItem(new OrderItem(product));
-        orderService.update(sessionId, order);
-        Order ord = orderService.read(sessionId);
-    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
+        orderService.update(sessionId, order);        
+    	model.addAttribute("orderPrice", order.getOrderPrice());
+    	return order;
         
     }
 
@@ -143,6 +149,6 @@ public class OrderRestController {
         order.removeOrderItem(new OrderItem(product));
         orderService.update(sessionId, order);
         Order ord = orderService.read(sessionId);
-    	model.addAttribute("orderTotalPrice", ord.getOrderPrice());
+    	model.addAttribute("orderPrice", ord.getOrderPrice());
     }
 }

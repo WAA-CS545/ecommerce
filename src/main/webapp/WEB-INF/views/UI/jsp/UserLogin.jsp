@@ -18,7 +18,7 @@
 					</div>
 				</c:if>
 					<c:url var="loginUrl" value="/login" />
-			    	<form action="${loginUrl}" method="post">
+			    	<form action="${loginUrl}" method="POST">
   					<sec:csrfInput />
                     <fieldset>
 			    	  	<div class="form-group">
@@ -32,13 +32,15 @@
                              
 			    	</fieldset>
 			      	</form>
+			      	<div class="col-md-4 left-account ">
+			      		<a href="<spring:url value='/register' />" class="create">Create an account</a>
+			      	</div>
 		</div>
 		<div class="col-md-4 left-account ">
 			<a href="<spring:url value='/Mattrices' />"><img class="img-responsive " src="<spring:url value='/resource/images/s1.jpg' /> " alt=""></a>
 			<div class="five">
 			<h2>25% </h2><span>discount</span>
-			</div>
-			<a href="<spring:url value='/register' />" class="create">Create an account</a>
+			</div>			
 <div class="clearfix"> </div>
 		</div>
 	<div class="clearfix"> </div>

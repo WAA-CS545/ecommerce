@@ -20,6 +20,17 @@
        		classpath*:**/*Context.xml
   		</param-value>
   </context-param>
+  <filter>
+	<filter-name>springSecurityFilterChain</filter-name>
+	<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+  </filter>
+	<filter-mapping>
+		<filter-name>springSecurityFilterChain</filter-name>
+		<url-pattern>/login/*</url-pattern>
+		<url-pattern>/postLogin/*</url-pattern>
+		<url-pattern>/loginfailed/*</url-pattern>
+		<url-pattern>/checkoutConfirmation/*</url-pattern>
+	</filter-mapping>
   <listener>
     <listener-class>
 			org.springframework.web.context.ContextLoaderListener 

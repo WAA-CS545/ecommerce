@@ -1,16 +1,18 @@
-var cartApp = angular.module('cartApp', []);
+var cartApp = angular.module('cartApp', ["ngSanitize"]);
 
-cartApp.controller('cartCtrl', function($scope, $http){
+cartApp.controller('cartCtrl', function($scope, $http){	
+	$scope.orderTotalPrice = "$0.00";
     $scope.refreshCart = function(){
         $http.get('/ecommerce/rest/order/'+$scope.orderId)
                 .success(function(data){
                     $scope.order = data;
+                    $scope.orderTotalPrice = "$"+data.orderPrice;
         });
     };
     
     $scope.clearCart = function(){
         $http.delete('/ecommerce/rest/order/'+$scope.orderId)
-                .success($scope.refreshCart());
+                .success($scope.refreshCart());       
     };
     
     $scope.initCartId = function(orderId){
@@ -20,7 +22,10 @@ cartApp.controller('cartCtrl', function($scope, $http){
     
     $scope.addToCart = function (productId){
         $http.put('/ecommerce/rest/order/add/'+productId)
-                .success(function (){
+                .success(function (data){
+                	$scope.order = data;
+                	$scope.orderId = data.orderId;
+                	$scope.orderTotalPrice = "$"+data.orderPrice;
                     alert ("Product Successfully added to the Cart!");
                 });
     };
@@ -28,7 +33,8 @@ cartApp.controller('cartCtrl', function($scope, $http){
     $scope.removeFromCart = function(productId){
         $http.put('/ecommerce/rest/order/remove/'+productId)
                 .success(function (){
-                    $scope.refreshCart();
+                    $scope.refreshCart();                    
         });
     };
+    
 });

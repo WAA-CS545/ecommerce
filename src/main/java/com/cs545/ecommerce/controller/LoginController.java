@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.User;
@@ -27,42 +28,46 @@ import com.cs545.ecommerce.service.UserCredentialsService;
 @Controller
 @SessionAttributes("user")
 public class LoginController {
-
 	@Autowired
 	UserCredentialsService credentialsService;
 	@Autowired
 	private CategoryService catservice;;
 	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public String login(Model model) {
+	public String login(HttpServletRequest request, Model model) {
 		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
+		model.addAttribute("Matricescategories", Matricescategories);		
 		model.addAttribute("pageToRender", "jsp/UserLogin.jsp");
- 		return "UI/template";
+		String nextPage = (String)request.getAttribute("nextPage");
+		if(nextPage != null){
+			model.addAttribute("nextPage", nextPage);
+		}
+ 		return "/UI/template";
 	}
- 
 	
 	@RequestMapping(value="/postLogin", method = RequestMethod.GET)
-	public String PostLogin(Model model) {
+	public String PostLogin(HttpServletRequest request, Model model) {
 		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
+		model.addAttribute("Matricescategories", Matricescategories);		
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (!(auth instanceof AnonymousAuthenticationToken)){    
         	model.addAttribute("user", getPrincipal());
-        	return "redirect:/home";
+        	String nextPage = (String)request.getAttribute("nextPage");
+        	if(nextPage != null){
+        		return "redirect:/"+nextPage;
+        	}else{
+        		return "redirect:/home";        	
+        	}        	
         }
  		return "redirect:/login";
 	}
  
 	@RequestMapping(value="/loginfailed", method = RequestMethod.GET)
 	public String loginerror(Model model) {
-		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");
-		model.addAttribute("Matricescategories", Matricescategories);
-		
+		List<Category> Matricescategories = catservice.getCategoriesByMainCategory("Matrices");		
 		model.addAttribute("error", "true");
-		return "login";
- 
+		model.addAttribute("Matricescategories", Matricescategories);		
+		model.addAttribute("pageToRender", "jsp/UserLogin.jsp");		
+ 		return "/UI/template"; 
 	}
  
 	@RequestMapping(value="/logout", method = RequestMethod.GET)
