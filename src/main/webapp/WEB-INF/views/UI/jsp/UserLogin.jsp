@@ -29,8 +29,9 @@
 			    		</div>
 			    		<input class="btn btn-lg btn-success btn-mini" type="submit" value="Login">
 			    		<input type="hidden" name="${_csrf.parameterName}"   value="${_csrf.token}" />
-                             
+                        <a href="<spring:url value='/register' />" class="btn btn-lg btn-success btn-mini">Create an account</a>
 			    	</fieldset>
+			    	
 			      	</form>
 		</div>
 		<div class="col-md-4 left-account ">
