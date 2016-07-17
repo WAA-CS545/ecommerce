@@ -3,14 +3,29 @@
  */
 package com.cs545.ecommerce.domain;
 
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  * @author Solomon Kassahun
  *
  */
 public class ContactUs {
+	public  ContactUs() {}
+	
+	@NotEmpty(message="{NotEmpty.ContactUs.name.validation}")
 	private String name;
+	
+	
+	@NotEmpty(message="{NotEmpty.ContactUs.email.validation}")
+	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message="{Pattern.ContactUs.email.validation}")
 	private String email;
+	
+	@NotEmpty(message="{NotEmpty.ContactUs.subject.validaton}")
 	private String subject;
+	
+	@NotEmpty(message="{NotEmpty.Contact.message.validation}")
 	private String message;
 	/**
 	 * @return the name

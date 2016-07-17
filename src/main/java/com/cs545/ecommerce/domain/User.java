@@ -31,14 +31,14 @@ public class User implements Serializable {
 	private Long id = null;
 
 
-	@NotEmpty
+	@NotEmpty(message="{NotEmpty.User.firstName.validation}")
 	private String firstName;
 
-	@NotEmpty
+	@NotEmpty(message="{NotEmpty.User.lastName.validation}")
 	private String lastName;
 
-	@NotEmpty
-	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$")
+	@NotEmpty(message="{NotEmpty.User.firstName.validation}")
+	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message="{NotEmpty.User.email.validation}")
 	private String email;
 
 	@Valid

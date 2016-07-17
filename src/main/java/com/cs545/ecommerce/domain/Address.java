@@ -23,13 +23,13 @@ public class Address implements Serializable {
 
 	private Long id = null;
 
-	@NotEmpty
+	@NotEmpty(message="{NotEmpty.Address.street.validation}")
 	private String street;
 
-	@NotEmpty
+	@NotEmpty(message="{NotEmpty.Address.zipcode.validation}")
 	private String zipcode;
 	
-	@NotEmpty
+	@NotEmpty(message="{NotEmpty.Address.city.validation}")
 	private String city;
 
 	private User user;

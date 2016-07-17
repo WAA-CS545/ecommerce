@@ -15,20 +15,21 @@ import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class UserCredentials {
 
-	@Size(min = 4, max = 8)
+	@Size(min = 4, max = 8, message="{Size.UserCredentials.realPassword.validation}")
 	String username;
 
 	String realPassword;
 	
-	@Size(min = 8, max = 14)
+	@Size(min = 8, max = 14, message="{Size.UserCredentials.realPassword.validation}")
 	String password;
 	
-	@NotNull(message="not match")
+	@NotEmpty(message="{NoteEmpty.UserCredentials.verifyPassword}")
 	String verifyPassword;
 	
 	Boolean enabled;

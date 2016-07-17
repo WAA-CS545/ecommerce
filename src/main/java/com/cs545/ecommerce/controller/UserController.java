@@ -4,6 +4,7 @@ import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +23,13 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST )
-	public String postRegister(@ModelAttribute("newProduct")  User newUser ,Model model){
+	public String postRegister(@ModelAttribute("newUser")  @Valid User newUser, BindingResult result, Model model){
+		 
+		
+		if(result.hasErrors()) {
+			model.addAttribute("pageToRender", "jsp/register.jsp");
+			return "UI/template";		
+        }
 		return "redirect:/registerConfirmation";
 	}
 	
