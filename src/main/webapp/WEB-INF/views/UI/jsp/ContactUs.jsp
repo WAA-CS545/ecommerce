@@ -1,6 +1,5 @@
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<link href='<spring:url value="/resource/css/errorstyle.css" htmlEscape="true" />' rel='stylesheet' type='text/css' />
 
 <!-- grow -->
 <div class="grow">

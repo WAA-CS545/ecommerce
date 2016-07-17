@@ -29,6 +29,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href="<spring:url value='/resource/css/memenu.css' /> " rel="stylesheet" type="text/css" media="all" />
 <script type="text/javascript" src='<spring:url value="/resource/js/memenu.js" /> ' ></script>
 <script>$(document).ready(function(){$(".memenu").memenu();});</script>
+<link href='<spring:url value="/resource/css/errorstyle.css" htmlEscape="true" />' rel='stylesheet' type='text/css' />
 <%-- <script src="<spring:url value='/resource/js/simpleCart.min.js' /> " > </script> --%>
 </head>
 <body ng-app="cartApp" ng-controller="cartCtrl" ng-init="initCartId('${sessionId}')">
