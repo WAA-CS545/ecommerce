@@ -4,8 +4,6 @@ package com.cs545.ecommerce.repository.impl;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.repository.UserCredentialsDao;
@@ -19,6 +17,7 @@ public class UserCredentialsDaoImpl implements UserCredentialsDao {
 	public UserCredentialsDaoImpl() {
 		}
 
+	@Override
 	public UserCredentials findByUserName(String userName) {
 		User user = new User();
 		user.setFirstName(userName);

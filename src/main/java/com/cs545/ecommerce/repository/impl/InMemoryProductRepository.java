@@ -10,13 +10,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.Image;
 import com.cs545.ecommerce.domain.Product;
-import com.cs545.ecommerce.repository.CategoryRepository;
 import com.cs545.ecommerce.repository.ProductRepository;
 
 
@@ -224,14 +222,16 @@ private InMemoryCategoryRepository catRep;
     }
 
  
-    public List<Product> getAllProducts() {
+    @Override
+	public List<Product> getAllProducts() {
         return listOfProduct;
     }
  
     /* (non-Javadoc)
      * @see com.cs545.ecommerce.repository.ProductRepository#getProductById(java.lang.String)
      */
-    public Product getProductById(String productId) {
+    @Override
+	public Product getProductById(String productId) {
         for(Product product: listOfProduct){
             if(product.getProductId().equals(productId)) {
                 return product;
@@ -244,7 +244,8 @@ private InMemoryCategoryRepository catRep;
     /* (non-Javadoc)
      * @see com.cs545.ecommerce.repository.ProductRepository#getProductByCategoryName(java.lang.String)
      */
-    public List<Product> getProductByCategoryName(String categoryName){
+    @Override
+	public List<Product> getProductByCategoryName(String categoryName){
     	List<Product> productsInCategory = new ArrayList<Product>();
     	for(Product product : listOfProduct){
     		String catName = product.getCategory().getCategoryName();
@@ -257,7 +258,8 @@ private InMemoryCategoryRepository catRep;
     /* (non-Javadoc)
      * @see com.cs545.ecommerce.repository.ProductRepository#searchProduct(java.lang.String, java.lang.String)
      */
-    public List<Product> searchProduct(String category, String inputStr){
+    @Override
+	public List<Product> searchProduct(String category, String inputStr){
     	List<Product> searchResult =  new ArrayList<Product>();
     	inputStr = inputStr.toLowerCase();
     	for(Product product : listOfProduct){
@@ -277,6 +279,7 @@ private InMemoryCategoryRepository catRep;
 	/* (non-Javadoc)
 	 * @see com.cs545.ecommerce.repository.ProductRepository#getProductsByMainCat(java.lang.String)
 	 */
+	@Override
 	public List<Product> getProductsByMainCat(String mainCatName){
 		List<Product> matchingProducts = new ArrayList<Product>();
 		for(Product product : listOfProduct){

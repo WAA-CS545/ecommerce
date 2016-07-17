@@ -3,8 +3,6 @@ package com.cs545.ecommerce.repository.impl;
 import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-
 import com.cs545.ecommerce.repository.GenericDao;
 
 
@@ -38,7 +36,7 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
 	@Override
 	public T findOne( Long id ){
-	    return (T) entityManager.find( daoType, id );
+	    return entityManager.find( daoType, id );
 	 }
 	
 	@SuppressWarnings("unchecked")
@@ -55,7 +53,7 @@ public abstract class GenericDaoImpl<T> implements GenericDao<T> {
 
  	@Override
 	public List<T> findAll(String s,Object  hint ){
- 	    return (List<T>)  entityManager.createQuery("SELECT m FROM Member AS m") 
+ 	    return entityManager.createQuery("SELECT m FROM Member AS m") 
  	    		.setHint(s,hint).getResultList();
   	}
 	

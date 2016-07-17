@@ -1,8 +1,6 @@
 package com.cs545.ecommerce.repository;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
 public interface GenericDao<T> {
 	/**

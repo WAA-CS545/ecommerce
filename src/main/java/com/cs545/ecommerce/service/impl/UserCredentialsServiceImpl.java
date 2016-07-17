@@ -19,6 +19,7 @@ public class UserCredentialsServiceImpl implements com.cs545.ecommerce.service.U
 	@Autowired
 	private UserCredentialsDao userCredentialsDao;
 
+	@Override
 	public void save(UserCredentials userCredentials) {
 		Authority auth = new Authority();
 		auth.setAuthority("ROLE_USER");
@@ -33,18 +34,22 @@ public class UserCredentialsServiceImpl implements com.cs545.ecommerce.service.U
 		
 	}
 
+	@Override
 	public UserCredentials update(UserCredentials userCredentials) {
 		return userCredentialsDao.update(userCredentials);
 	}
 
+	@Override
 	public List<UserCredentials> findAll() {
-		return (List<UserCredentials>) userCredentialsDao.findAll();
+		return userCredentialsDao.findAll();
 	}
 
+	@Override
 	public UserCredentials findOne(Long id) {
 		return userCredentialsDao.findOne(id);
 	}
 
+	@Override
 	public UserCredentials findByUserName(String userName) {
 		return userCredentialsDao.findByUserName(userName);
 	}

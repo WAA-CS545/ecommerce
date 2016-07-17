@@ -2,8 +2,6 @@ package com.cs545.ecommerce.repository.impl;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.repository.UserDao;
@@ -17,6 +15,7 @@ public class UserDaoImpl  implements UserDao {
 		
 		}
 
+	@Override
 	public User findByEmail(String email) {
 	     return null;
 	}

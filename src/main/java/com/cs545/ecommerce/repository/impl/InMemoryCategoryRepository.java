@@ -9,7 +9,6 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.cs545.ecommerce.domain.Category;
-import com.cs545.ecommerce.domain.Product;
 import com.cs545.ecommerce.repository.CategoryRepository;
 
 /**
@@ -77,6 +76,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 	/* (non-Javadoc)
 	 * @see com.cs545.ecommerce.repository.CategoryRepository#getAllCategoryNames()
 	 */
+	@Override
 	public List<String> getAllCategoryNames() {	
 		List <String> categoryNames = new ArrayList<String>();
 		for(Category category: categories){
@@ -88,6 +88,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 	/* (non-Javadoc)
 	 * @see com.cs545.ecommerce.repository.CategoryRepository#getAllCategories()
 	 */
+	@Override
 	public List<Category> getAllCategories() {	
 		return categories;
 	}
@@ -95,6 +96,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 	/* (non-Javadoc)
 	 * @see com.cs545.ecommerce.repository.CategoryRepository#getCategorNamesIn(java.lang.String)
 	 */
+	@Override
 	public List<String> getCategorNamesIn(String mainCategoryName) {
 		List <String> categoryNames = new ArrayList<String>();
 		for(Category category: categories){
@@ -105,6 +107,7 @@ public class InMemoryCategoryRepository implements CategoryRepository {
 		}
 		return categoryNames;
 	}
+	@Override
 	public Category getCategoryByName(String categoryName){		
 		for(Category cat:categories){
 			if(cat.getCategoryName().equals(categoryName)){

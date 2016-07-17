@@ -1,16 +1,7 @@
 package com.cs545.ecommerce.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
-
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import java.io.Serializable;
 
 public class Address implements Serializable {
@@ -77,6 +68,7 @@ public class Address implements Serializable {
 
 	// ********************** Common Methods ********************** //
 
+	@Override
 	public boolean equals(Object o) {
 		if (this == o)
 			return true;
@@ -95,6 +87,7 @@ public class Address implements Serializable {
 		return true;
 	}
 
+	@Override
 	public int hashCode() {
 		int result;
 		result = street.hashCode();
@@ -103,6 +96,7 @@ public class Address implements Serializable {
 		return result;
 	}
 
+	@Override
 	public String toString() {
 		return "Street: '" + getStreet() + "', " + "Zipcode: '" + getZipcode() + "', " + "City: '" + getCity() + "'";
 	}

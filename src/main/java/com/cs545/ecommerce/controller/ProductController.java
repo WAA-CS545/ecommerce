@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.cs545.ecommerce.domain.Category;
 import com.cs545.ecommerce.domain.Product;
-import com.cs545.ecommerce.repository.impl.InMemoryCategoryRepository;
 import com.cs545.ecommerce.service.CategoryService;
 import com.cs545.ecommerce.service.ProductService;
 
