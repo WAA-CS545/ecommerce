@@ -37,8 +37,8 @@ public class User implements Serializable {
 	@NotEmpty(message="{NotEmpty.User.lastName.validation}")
 	private String lastName;
 
-	@NotEmpty(message="{NotEmpty.User.firstName.validation}")
-	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message="{NotEmpty.User.email.validation}")
+	@NotEmpty(message="{NotEmpty.User.email.validation}")
+	@Pattern(regexp="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", message="{Pattern.User.email.validation}")
 	private String email;
 
 	@Valid

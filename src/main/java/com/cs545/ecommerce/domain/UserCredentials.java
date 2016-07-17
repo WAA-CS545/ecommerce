@@ -21,7 +21,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class UserCredentials {
 
-	@Size(min = 4, max = 8, message="{Size.UserCredentials.realPassword.validation}")
+	@Size(min = 4, max = 8, message="{Size.UserCredentials.userName.validation}")
 	String username;
 
 	String realPassword;
