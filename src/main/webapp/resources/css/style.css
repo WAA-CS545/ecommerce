@@ -1969,6 +1969,10 @@ a.create {
 	text-align: center;
 	display: block;
 }
+a.create:hover {
+	color: #fff;
+	background: #000;
+}
 
 .left-account img {
 	width: 100%;

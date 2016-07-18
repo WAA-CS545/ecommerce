@@ -49,6 +49,6 @@
 			</div>
 		</div>
 		<div class="footer-class">
-		<p>© 2015 Mattress . All Rights Reserved | Design by  <a href="" target="_blank">Group 3 WAA peoject</a> </p>
+		<p>© 2016 Mattress . All Rights Reserved | Design by  <a href="" target="_blank">Group 3 WAA peoject</a> </p>
 		</div>
 		

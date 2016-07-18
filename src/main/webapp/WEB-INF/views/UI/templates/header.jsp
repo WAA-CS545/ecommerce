@@ -82,7 +82,7 @@
 				</c:choose>
 
 				<li><a class="color6"
-					href="<spring:url value='/jsp/ContactUs'/>">Contact</a></li>
+					href="<spring:url value='/jsp/ContactUs'/>">Contact Us</a></li>
 			</ul>
 		</div>
 
