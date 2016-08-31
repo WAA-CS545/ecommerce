@@ -149,17 +149,19 @@ a.item_add {
 .sb-search-input {
 	position: absolute;
 	top: 0px;
-	left: 1px;
 	border: none;
 	outline: none;
-	background: #8CE78A;
 	width: 100%;
+	left: 1px;	
+}
+.sb-search-input input, .sb-search-input select{
+	border: none;
+	background: #8CE78A;
 	height: 40px;
 	margin: 0;
 	z-index: 10;
 	font-size: 13px;
 	color: #FFFFFF;
-	padding-left: 1em;
 }
 
 .sb-search-input::-webkit-input-placeholder {
@@ -225,6 +227,14 @@ a.item_add {
 	z-index: 90;
 }
 /*-- search-ends --*/
+
+/*-- Checkout confirmation page --*/
+.checkout-confirm {
+	margin: 10px;
+	padding: 10px;
+}
+/*-- Checkout confirmation page ends --*/
+
 i.facebok {
 	width: 34px;
 	height: 34px;

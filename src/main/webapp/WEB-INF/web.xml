@@ -7,7 +7,7 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>
 				classpath*:**/*context.xml
-			</param-value>
+	 </param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
@@ -34,7 +34,7 @@
   <listener>
     <listener-class>
 			org.springframework.web.context.ContextLoaderListener 
-		</listener-class>
+	</listener-class>
   </listener>
   <error-page>
     <error-code>404</error-code>

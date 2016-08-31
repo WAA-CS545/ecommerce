@@ -13,12 +13,20 @@
 			</ul>
 		</div>
 		<div class="header-left">
-
+			
 			<div class="search-box">
+				
 				<div id="sb-search" class="sb-search">
 					<form action="<spring:url value='/product'/>" method="get">
-						<input name="searchInput" class="sb-search-input"
-							placeholder="Enter your search term..." type="search" id="search">
+						<span class="sb-search-input">
+							<select name="searchCategory">
+								<option value = "" selected="selected">Category</option>
+								<option value = "All">All</option>							
+							</select>						
+							<input name="searchInput" 
+								placeholder="Enter your search term..." type="search" id="search">
+						</span>
+						
 						<input class="sb-search-submit" type="submit" value=""> <span
 							class="sb-icon-search"> </span>
 					</form>

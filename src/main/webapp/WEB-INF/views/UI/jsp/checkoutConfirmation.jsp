@@ -8,7 +8,7 @@
 <!-- grow -->
 	<div class="container">
 		<div class="confirmation_page">
-			<div>
+			<div class="checkout-confirm alert-success">
 				<p>
 					Thank you for buying from us. Your items will be shipped to you within 2 working days.<br>
 					Receipt and shipment tracking information for your order will be sent to your email address soon.
